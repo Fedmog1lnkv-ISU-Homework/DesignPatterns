@@ -7,9 +7,11 @@ class SettingsManager:
     Менеджер настроек
     """
     _instance = None
+    _file_name = None
 
     def __new__(cls, file_name: str = "settings.json", settings_dict: dict = None):
-        if cls._instance is None:
+        if cls._instance is None or file_name != cls._file_name:
+            cls._file_name = file_name
             cls._instance = super(SettingsManager, cls).__new__(cls)
             cls._instance._repository = SettingsRepository(file_name)
 
