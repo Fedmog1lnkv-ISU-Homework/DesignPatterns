@@ -15,8 +15,7 @@ class SettingsRepository:
 
     def _load(self) -> Settings:
         try:
-            project_directory = os.path.dirname(os.path.abspath(sys.argv[0]))
-            full_name = os.path.join(project_directory, self._file_name)
+            full_name = self._file_name
 
             with open(full_name, 'r', encoding="utf-8") as stream:
                 data = json.load(stream)

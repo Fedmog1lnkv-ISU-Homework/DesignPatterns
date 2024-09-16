@@ -1,9 +1,12 @@
-class Settings:
+from src.core.abstractions.abstract_entity import AbstractEntity
+from src.core.exceptions.validation_exception import TypeValidationException, LengthValidationException
+
+
+class Settings(AbstractEntity):
     """
     Модель настроек.
     """
     __inn: str = ""
-    __organization_name = ""
     __account: str = ""
     __correspondent_account: str = ""
     __bic: str = ""
@@ -25,9 +28,9 @@ class Settings:
     @inn.setter
     def inn(self, new_inn) -> None:
         if not isinstance(new_inn, str):
-            raise TypeError("inn должен быть строкой")
+            raise TypeValidationException(new_inn, str)
         if len(new_inn) != 12:
-            raise ValueError(f"inn должен содержать ровно 12 символов, а не {len(new_inn)}")
+            raise LengthValidationException(new_inn, 12)
 
         self.__inn = new_inn
 
@@ -38,9 +41,9 @@ class Settings:
     @account.setter
     def account(self, new_account) -> None:
         if not isinstance(new_account, str):
-            raise TypeError("account должен быть строкой")
+            raise TypeValidationException(new_account, str)
         if len(new_account) != 11:
-            raise ValueError(f"account должен содержать ровно 11 символов, а не {len(new_account)}")
+            raise LengthValidationException(new_account, 11)
 
         self.__account = new_account
 
@@ -51,10 +54,9 @@ class Settings:
     @correspondent_account.setter
     def correspondent_account(self, new_correspondent_account) -> None:
         if not isinstance(new_correspondent_account, str):
-            raise TypeError("correspondent_account должен быть строкой")
+            raise TypeValidationException(new_correspondent_account, str)
         if len(new_correspondent_account) != 11:
-            raise ValueError(
-                f"correspondent_account должен содержать ровно 11 символов, а не {len(new_correspondent_account)}")
+            raise LengthValidationException(new_correspondent_account, 11)
 
         self.__correspondent_account = new_correspondent_account
 
@@ -65,9 +67,9 @@ class Settings:
     @bic.setter
     def bic(self, new_bic) -> None:
         if not isinstance(new_bic, str):
-            raise TypeError("bic должен быть строкой")
+            raise TypeValidationException(new_bic, str)
         if len(new_bic) != 9:
-            raise ValueError(f"bic должен содержать ровно 9 символов, а не {len(new_bic)}")
+            raise LengthValidationException(new_bic, 9)
 
         self.__bic = new_bic
 
@@ -78,7 +80,7 @@ class Settings:
     @name.setter
     def name(self, new_name) -> None:
         if not isinstance(new_name, str):
-            raise TypeError("name должно быть строкой")
+            raise TypeValidationException(new_name, str)
         self.__name = new_name
 
     @property
@@ -88,9 +90,9 @@ class Settings:
     @type_of_ownership.setter
     def type_of_ownership(self, new_type_of_ownership) -> None:
         if not isinstance(new_type_of_ownership, str):
-            raise TypeError("type_of_ownership должен быть строкой")
+            raise TypeValidationException(new_type_of_ownership, str)
         if len(new_type_of_ownership) != 5:
-            raise ValueError(f"type_of_ownership должен содержать ровно 5 символов, а не {len(new_type_of_ownership)}")
+            raise LengthValidationException(new_type_of_ownership, 5)
         self.__type_of_ownership = new_type_of_ownership
 
     def to_json(self) -> dict:
@@ -105,3 +107,6 @@ class Settings:
             "name": self.name,
             "type_of_ownership": self.type_of_ownership
         }
+
+    def set_compare_mode(self, other) -> bool:
+        return super().set_compare_mode(other)
