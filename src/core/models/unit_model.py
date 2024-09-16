@@ -54,22 +54,6 @@ class UnitModel(AbstractEntity):
 
         self.__base_unit = unit
 
-    def to_base(self, value: float) -> float:
-        """
-        Переводит значение в базовую единицу
-        :param value: значение в текущей единице измерения
-        :return: значение в базовой единице
-        """
-        return value * self.__conversion_factor
-
-    def from_base(self, value: float) -> float:
-        """
-        Переводит значение из базовой единицы в текущую единицу
-        :param value: значение в базовой единице измерения
-        :return: значение в текущей единице измерения
-        """
-        return value / self.__conversion_factor
-
     def set_compare_mode(self, other) -> bool:
         """
         Сравнение по наименованию
