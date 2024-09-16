@@ -23,3 +23,8 @@ class NomenclatureGroup(AbstractEntity):
     @staticmethod
     def create_group():
         return NomenclatureGroup("Ингредиенты")
+
+    def set_compare_mode(self, other) -> bool:
+        if not isinstance(other, NomenclatureGroup):
+            return False
+        return self.name == other.name

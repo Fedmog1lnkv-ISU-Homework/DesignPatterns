@@ -107,3 +107,6 @@ class Settings(AbstractEntity):
             "name": self.name,
             "type_of_ownership": self.type_of_ownership
         }
+
+    def set_compare_mode(self, other) -> bool:
+        return super().set_compare_mode(other)

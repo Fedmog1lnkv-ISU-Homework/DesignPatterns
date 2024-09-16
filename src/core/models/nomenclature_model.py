@@ -40,3 +40,6 @@ class Nomenclature(AbstractEntity):
         if len(value) > 255:
             raise LengthValidationException(value, 255)
         self.__name = value.strip()
+        
+    def set_compare_mode(self, other) -> bool:
+        return super().set_compare_mode(other)

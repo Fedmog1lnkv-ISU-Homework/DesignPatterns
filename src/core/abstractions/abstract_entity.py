@@ -17,6 +17,7 @@ class AbstractEntity(ABC):
         """
         return self.__unique_code
 
+    @abstractmethod
     def set_compare_mode(self, other_object) -> bool:
         return self.__unique_code == other_object.__unique_code
 
