@@ -1,8 +1,9 @@
+from src.core.abstractions.abstract_manager import AbstractManager
 from src.core.models.settings import Settings
 from src.infrastructure.repositories.settings_repository import SettingsRepository
 
 
-class SettingsManager:
+class SettingsManager(AbstractManager):
     """
     Менеджер настроек
     """
