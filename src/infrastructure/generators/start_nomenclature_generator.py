@@ -16,17 +16,17 @@ class StartNomenclatureGenerator:
 
         self.__group = NomenclatureGroup('Еда')
 
-        self.__wheat_flour = Nomenclature('Пшеничная мука', self.__group.unique_code, generator.get_kilograms())
-        self.__sugar = Nomenclature('Сахар', self.__group.unique_code, generator.get_kilograms())
-        self.__butter = Nomenclature('Сливочное масло', self.__group.unique_code, generator.get_kilograms())
-        self.__egg = Nomenclature('Яйцо', self.__group.unique_code, generator.get_kilograms())
-        self.__vanilla_sugar = Nomenclature('Ванильный сахар', self.__group.unique_code, generator.get_kilograms())
-        self.__chicken_fillet = Nomenclature('Куриное филе', self.__group.unique_code, generator.get_kilograms())
-        self.__mushrooms = Nomenclature('Шампиньоны', self.__group.unique_code, generator.get_kilograms())
-        self.__onion = Nomenclature('Лук репчатый', self.__group.unique_code, generator.get_kilograms())
-        self.__dairy_cream = Nomenclature('Сливки', self.__group.unique_code, generator.get_liters())
-        self.__bell_pepper = Nomenclature('Болгарский перец', self.__group.unique_code, generator.get_things())
-        self.__water = Nomenclature('Вода', self.__group.unique_code, generator.get_liters())
+        self.__wheat_flour = Nomenclature('Пшеничная мука', self.__group, generator.get_kilograms())
+        self.__sugar = Nomenclature('Сахар', self.__group, generator.get_kilograms())
+        self.__butter = Nomenclature('Сливочное масло', self.__group, generator.get_kilograms())
+        self.__egg = Nomenclature('Яйцо', self.__group, generator.get_kilograms())
+        self.__vanilla_sugar = Nomenclature('Ванильный сахар', self.__group, generator.get_kilograms())
+        self.__chicken_fillet = Nomenclature('Куриное филе', self.__group, generator.get_kilograms())
+        self.__mushrooms = Nomenclature('Шампиньоны', self.__group, generator.get_kilograms())
+        self.__onion = Nomenclature('Лук репчатый', self.__group, generator.get_kilograms())
+        self.__dairy_cream = Nomenclature('Сливки', self.__group, generator.get_liters())
+        self.__bell_pepper = Nomenclature('Болгарский перец', self.__group, generator.get_things())
+        self.__water = Nomenclature('Вода', self.__group, generator.get_liters())
 
     def get_wheat_flour(self) -> Nomenclature:
         return self.__wheat_flour

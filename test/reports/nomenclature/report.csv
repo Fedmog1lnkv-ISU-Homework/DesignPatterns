@@ -1,0 +1,3 @@
+group.name,group.unique_code,name,units.name,units.conversion_factor,units.base_unit.name,units.base_unit.conversion_factor,units.base_unit.base_unit,units.base_unit.unique_code,units.unique_code,unique_code
+Ингредиенты,1a282bb2-949d-4cfc-8760-9a9acaf8184f,name1,килограмм,1000.0,грамм,1.0,,1d095cde-e75d-44e4-a526-04aed912f97f,55cbdcb8-639d-4450-8e93-efecbd79832e,59deaae5-96ea-450b-849a-08966fa6dafd
+Ингредиенты,1a282bb2-949d-4cfc-8760-9a9acaf8184f,name2,килограмм,1000.0,грамм,1.0,,1d095cde-e75d-44e4-a526-04aed912f97f,55cbdcb8-639d-4450-8e93-efecbd79832e,539cfd68-ff05-4b36-8c46-d1aac562135a

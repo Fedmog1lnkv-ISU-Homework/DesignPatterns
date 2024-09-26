@@ -1,4 +1,5 @@
 from abc import ABC, abstractmethod
+from cgitb import reset
 
 from src.core.abstractions.abstract_entity import AbstractEntity
 from src.core.enums.report_format import ReportFormat
@@ -41,14 +42,20 @@ class AbstractReport(ABC):
         self.__result = value
 
     def _get_list_properties(self, obj: list) -> list[dict]:
-        return [self._get_properties(item) for item in obj]
+        res = []
+        for item in obj:
+            if hasattr(item, '__dict__'):
+                res += [self._get_properties(item)]
+            else:
+                res += [item]
+        return res
 
     def _get_properties(self, obj) -> dict:
         props = self._extract_properties(obj)
 
         if isinstance(obj, AbstractEntity):
             props['unique_code'] = obj.unique_code
-
+            
         props = self._process_nested_properties(props)
 
         return props
@@ -62,10 +69,13 @@ class AbstractReport(ABC):
 
     def _process_nested_properties(self, props: dict) -> dict:
         for key, value in props.items():
+            print(value)
             if isinstance(value, list):
                 props[key] = self._get_list_properties(value)
             elif hasattr(value, '__dict__') and not isinstance(value, (list, dict)):
                 props[key] = self._get_properties(value)
+            else:
+                props[key] = value
         return props
 
     def _flatten_dict(self, d: dict, parent_key: str = '', sep: str = '.') -> dict:
