@@ -40,6 +40,19 @@ class Nomenclature(AbstractEntity):
         if len(value) > 255:
             raise LengthValidationException(value, 255)
         self.__name = value.strip()
-        
+
+    @property
+    def units(self) -> str:
+        return self.__units
+
+    @units.setter
+    def units(self, value: UnitModel):
+        if value is None:
+            return
+        if not isinstance(value, UnitModel):
+            raise TypeValidationException(value, UnitModel)
+        self.__units = value
+
+
     def set_compare_mode(self, other) -> bool:
         return super().set_compare_mode(other)

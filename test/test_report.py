@@ -22,5 +22,5 @@ def test_nomenclature_report():
     for value in ReportFormat.__members__.values():
         report = factory.create(settings, value)
         res = report.generate([n1, n2])
-        with open(f'reports/report.{str(report.format.name).lower()}', 'w+') as file:
+        with open(f'reports/report.{str(report.format.name).lower()}', 'w+', encoding="UTF-8") as file:
             file.write(res)

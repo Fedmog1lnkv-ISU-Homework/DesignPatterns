@@ -64,7 +64,7 @@ class AbstractReport(ABC):
         for key, value in props.items():
             if isinstance(value, list):
                 props[key] = self._get_list_properties(value)
-            elif hasattr(value, '__dict__'):
+            elif hasattr(value, '__dict__') and not isinstance(value, (list, dict)):
                 props[key] = self._get_properties(value)
         return props
 

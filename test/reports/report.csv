@@ -1,3 +1,3 @@
-group_id,name,unique_code
-d9e0b084-41a4-4c82-b349-21b3ec91ac65,name1,3690137f-4f82-4a01-ae0d-5234caeda109
-d9e0b084-41a4-4c82-b349-21b3ec91ac65,name2,dd773edf-c4c3-4b3e-be1a-ba11263454a4
+group_id,name,units.name,units.conversion_factor,units.base_unit,units.unique_code,unique_code
+e95d0b18-65b5-4aec-b220-87a7c19de9ed,name1,грамм,1.0,,2c6fd3ad-dfaa-4618-a165-022949b05f1d,e053a909-b17a-4d8c-943a-a3f25cd92964
+e95d0b18-65b5-4aec-b220-87a7c19de9ed,name2,грамм,1.0,,2c6fd3ad-dfaa-4618-a165-022949b05f1d,4add35af-a367-400e-80c7-e2595b87deef
