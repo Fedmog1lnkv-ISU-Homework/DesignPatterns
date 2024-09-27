@@ -1,5 +1,11 @@
 from src.core.abstractions.abstract_entity import AbstractEntity
+from src.core.enums.report_format import ReportFormat
 from src.core.exceptions.validation_exception import TypeValidationException, LengthValidationException
+from src.infrastructure.reports.csv_report import CsvReport
+from src.infrastructure.reports.json_report import JsonReport
+from src.infrastructure.reports.markdown_report import MarkdownReport
+from src.infrastructure.reports.rtf_report import RtfReport
+from src.infrastructure.reports.xml_report import XmlReport
 
 
 class Settings(AbstractEntity):
@@ -12,6 +18,14 @@ class Settings(AbstractEntity):
     __bic: str = ""
     __name: str = ""
     __type_of_ownership: str = ""
+    __default_report_format: ReportFormat = ReportFormat.CSV
+    __report_map: dict[ReportFormat, type] = {
+        ReportFormat.CSV: CsvReport,
+        ReportFormat.MARKDOWN: MarkdownReport,
+        ReportFormat.JSON: JsonReport,
+        ReportFormat.XML: XmlReport,
+        ReportFormat.RTF: RtfReport
+    }
 
     def __str__(self):
         return (f"inn={self.inn} \n"
@@ -94,6 +108,20 @@ class Settings(AbstractEntity):
         if len(new_type_of_ownership) != 5:
             raise LengthValidationException(new_type_of_ownership, 5)
         self.__type_of_ownership = new_type_of_ownership
+
+    @property
+    def default_report_format(self) -> ReportFormat:
+        return self.__default_report_format
+
+    @default_report_format.setter
+    def default_report_format(self, value: ReportFormat):
+        if not isinstance(value, ReportFormat):
+            raise TypeValidationException(value, ReportFormat)
+        self.__default_report_format = value
+
+    @property
+    def report_map(self) -> dict[ReportFormat, type]:
+        return self.__report_map
 
     def to_json(self) -> dict:
         """
