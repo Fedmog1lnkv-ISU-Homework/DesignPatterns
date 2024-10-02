@@ -4,10 +4,11 @@ from src.core.models.unit_model import UnitModel
 
 
 class UnitValue(AbstractEntity):
+    __value: float = None
+    __unit: UnitModel = None
+
     def __init__(self, value: float, unit: UnitModel):
         super().__init__()
-        self.__value = None
-        self.__unit = None
 
         self.value = value
         self.unit = unit
