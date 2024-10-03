@@ -1,12 +1,14 @@
-import datetime
 from abc import abstractmethod, ABC
 from typing import get_origin, get_args, get_type_hints
 
 from src.core.abstractions.abstract_entity import AbstractEntity
+from src.core.exceptions.validation_exception import TypeValidationException
+from src.infrastructure.serializers.timedelta_mapper import TimedeltaMapper
 
 
 class AbstractSerializer(ABC):
     __primitives = [int, str, float, bool]
+    __mappers = [TimedeltaMapper()]
 
     @abstractmethod
     def serialize(self, obj):
@@ -50,12 +52,19 @@ class AbstractSerializer(ABC):
 
     def _process_nested_properties(self, props: dict) -> dict:
         for key, value in props.items():
+            ind = False
+            for mapper in self.__mappers:
+                if isinstance(value, get_args(type(mapper).__orig_bases__[0])[0]):
+                    props[key] = mapper.from_model(value)
+                    ind = True
+                    break
+            if ind:
+                continue
+                
             if isinstance(value, list):
                 props[key] = self._get_list_properties(value)
             elif hasattr(value, '__dict__') and not isinstance(value, (list, dict)):
                 props[key] = self._get_object_properties(value)
-            elif isinstance(value, datetime.timedelta):
-                props[key] = value.total_seconds()
             else:
                 props[key] = value
         return props
@@ -67,10 +76,13 @@ class AbstractSerializer(ABC):
         if obj_type in self.__primitives:
             return data
 
-        if issubclass(obj_type, datetime.timedelta):
-            return datetime.timedelta(seconds=float(data))
+        for mapper in self.__mappers:
+            if issubclass(obj_type, get_args(type(mapper).__orig_bases__[0])[0]):
+                return mapper.to_model(data)
 
         if get_origin(obj_type) == list:
+            if not isinstance(data, list):
+                raise TypeValidationException(data, list)
             list_type = get_args(obj_type)[0]
             return [self.from_dict(i, list_type) for i in data]
 
