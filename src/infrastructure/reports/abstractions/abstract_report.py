@@ -69,7 +69,6 @@ class AbstractReport(ABC):
 
     def _process_nested_properties(self, props: dict) -> dict:
         for key, value in props.items():
-            print(value)
             if isinstance(value, list):
                 props[key] = self._get_list_properties(value)
             elif hasattr(value, '__dict__') and not isinstance(value, (list, dict)):

@@ -5,13 +5,14 @@ from src.core.models.unit_value import UnitValue
 
 
 class RecipeItem(AbstractEntity):
+    __nomenclature: Nomenclature = None
+    __unit_value: UnitValue = None
+
     def set_compare_mode(self, other_object) -> bool:
         return super().set_compare_mode(other_object)
 
     def __init__(self, nomenclature: Nomenclature, unit_value: UnitValue):
         super().__init__()
-        self.__nomenclature = None
-        self.__unit_value = None
 
         self.nomenclature = nomenclature
         self.unit_value = unit_value

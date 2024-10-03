@@ -6,16 +6,17 @@ from src.core.models.recipe_item import RecipeItem
 
 
 class Recipe(AbstractEntity):
+    __name: str = None
+    __items: list[RecipeItem] = None
+    __duration: datetime.timedelta = None
+    __steps: list[str] = None
+
     def set_compare_mode(self, other_object) -> bool:
         return super().set_compare_mode(other_object)
 
     def __init__(self, name: str, items: list[RecipeItem], duration: datetime.timedelta, steps: list[str]):
         super().__init__()
-        self.__name = None
-        self.__items = None
-        self.__duration = None
-        self.__steps = None
-
+        
         self.name = name
         self.items = items
         self.duration = duration

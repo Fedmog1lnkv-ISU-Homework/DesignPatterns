@@ -8,14 +8,12 @@ class Nomenclature(AbstractEntity):
     """
     Модель номенклатуры
     """
+    __name: str = None
+    __units: UnitModel = None
+    __group: NomenclatureGroup = None
 
     def __init__(self, name: str, group: NomenclatureGroup, units: UnitModel):
         super().__init__()
-
-        self.__name = None
-        self.__units = None
-        self.__group = None
-
         self.name = name.strip()
         self.units = units
         self.group = group
@@ -43,7 +41,7 @@ class Nomenclature(AbstractEntity):
         self.__name = value.strip()
 
     @property
-    def units(self) -> str:
+    def units(self) -> UnitModel:
         return self.__units
 
     @units.setter

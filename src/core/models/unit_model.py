@@ -1,3 +1,4 @@
+import builtins
 from src.core.abstractions.abstract_entity import AbstractEntity
 from src.core.exceptions.validation_exception import TypeValidationException
 
@@ -6,12 +7,12 @@ class UnitModel(AbstractEntity):
     """
     Модель единицы измерения
     """
+    __name: str= None
+    __conversion_factor: float = None
+    __base_unit: 'UnitModel' = None
 
     def __init__(self, name: str, conversion_factor: float, base_unit=None):
         super().__init__()
-        self.__name = None
-        self.__conversion_factor = None
-        self.__base_unit = None
 
         self.name = name.strip()  # наименование
         self.conversion_factor = conversion_factor  # коэффициент пересчета
@@ -64,3 +65,4 @@ class UnitModel(AbstractEntity):
             return False
         return self.name == other.name and self.conversion_factor ==  other.conversion_factor
 
+builtins.UnitModel = UnitModel
