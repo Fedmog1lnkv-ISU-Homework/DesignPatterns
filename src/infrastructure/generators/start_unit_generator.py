@@ -19,6 +19,16 @@ class StartUnitGenerator:
         self.__milliliters = UnitModel('мл', 1)
         self.__liters = UnitModel('л', 1000, self.__milliliters)
 
+    def get_units(self) -> list[UnitModel]:
+        return [
+            self.__grams,
+            self.__kilograms,
+            self.__things,
+            self.__tens,
+            self.__milliliters,
+            self.__liters
+        ]
+
     def get_grams(self) -> UnitModel:
         return self.__grams
 

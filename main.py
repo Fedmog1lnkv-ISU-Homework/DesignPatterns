@@ -1,4 +1,7 @@
-from src.core.services.settings_manager import SettingsManager
+from flasgger import Swagger
+
+from src.api.app import app
+from src.core.services.start_manager import StartManager
 
 test_dict = {
     "inn": "123456789012",  # 12 символов
@@ -10,14 +13,8 @@ test_dict = {
 }
 
 if __name__ == "__main__":
-    manager = SettingsManager()
-    print(f"start settings:\n{manager.settings}")
+    StartManager()
 
-    manager2 = SettingsManager()
-    manager2.settings.name = "ООО Рога и Копыта 2.0"
-    print()
-    print(f"final settings:\n{manager.settings}")
+    Swagger(app.app, template_file="swagger.yaml")
 
-    manager_from_dict = SettingsManager(settings_dict=test_dict)
-    print()
-    print(f"from dict settings:\n{manager_from_dict.settings}")
+    app.run(port=8080)

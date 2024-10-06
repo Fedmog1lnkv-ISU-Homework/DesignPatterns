@@ -28,6 +28,24 @@ class StartNomenclatureGenerator:
         self.__bell_pepper = Nomenclature('Болгарский перец', self.__group, generator.get_things())
         self.__water = Nomenclature('Вода', self.__group, generator.get_liters())
 
+    def get_groups(self) -> list[NomenclatureGroup]:
+        return [self.__group]
+
+    def get_nomenclatures(self) -> list[Nomenclature]:
+        return [
+            self.__wheat_flour,
+            self.__sugar,
+            self.__butter,
+            self.__egg,
+            self.__vanilla_sugar,
+            self.__chicken_fillet,
+            self.__mushrooms,
+            self.__onion,
+            self.__dairy_cream,
+            self.__bell_pepper,
+            self.__water
+        ]
+
     def get_wheat_flour(self) -> Nomenclature:
         return self.__wheat_flour
 

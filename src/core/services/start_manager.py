@@ -8,7 +8,6 @@ class StartManager(AbstractManager):
         self.__recipes_repository = RecipesRepository()
         self.__update_start_recipes()
 
-
     def __update_start_recipes(self):
         recipes = StartRecipesGenerator().get_recipes()
         self.__recipes_repository.update_start_recipes(recipes)
