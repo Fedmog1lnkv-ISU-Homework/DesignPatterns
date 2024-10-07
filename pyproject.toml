@@ -8,6 +8,10 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.12"
 pytest = "^8.3.2"
+flasgger = "^0.9.7.1"
+connexion = {extras = ["flask"], version = "^3.1.0"}
+flask = "^3.0.3"
+uvicorn = "^0.31.0"
 
 
 [build-system]

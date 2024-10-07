@@ -7,3 +7,7 @@ class ReportFormat(Enum):
     JSON = 3
     XML = 4
     RTF = 5
+
+    @classmethod
+    def get_all(cls):
+        return [e.name for e in cls]

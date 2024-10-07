@@ -12,3 +12,6 @@ class RecipesRepository:
 
         for recipe in start_recipes:
             self.__recipes_data_source.create(recipe)
+
+    def get_all(self) -> list[Recipe]:
+        return self.__recipes_data_source.get_all()
