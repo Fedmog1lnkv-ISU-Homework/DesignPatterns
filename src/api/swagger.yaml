@@ -1,65 +1,65 @@
-servers:
-  - url: /api/reports
-    description: Base URL for the API
+openapi: "3.0.0"
 
+info:
+  description: Набор методов для учёта предприятия
+  version: 1.0.0
+  title: RestApi
+  
+servers:
+  - url: /api
+    description: Base URL for the API
 paths:
-  /reports/formats:
-    get:
-      summary: Get available report formats
-      description: Retrieve a list of all available report formats.
+  /api/prototype/{entity}:
+    post:
+      summary: Добавить фильтр для отчета по домену
+      operationId: src.api.routes.prototype.get_by_entity
+      parameters:
+        - name: entity
+          in: path
+          description: Тип юнита для прототипа
+          required: true
+          schema:
+            type: string
+            enum:
+              - recipes
+              - nomenclatures
+              - nomenclature_groups
+              - measurement_units
+      requestBody:  # Исправлено с "parameters" на "requestBody"
+        description: DTO модель для фильтрации
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Filters'
       responses:
-        '200':
-          description: A list of report formats
+        200:
+          description: Фильтр успешно добавлен
           content:
             application/json:
               schema:
                 type: object
                 properties:
-                  formats:
-                    type: array
-                    items:
-                      type: string
-
-  /reports/report/{entity}:
-    get:
-      summary: Generate report for a specific entity
-      description: Retrieve a report for the specified entity in a given format.
-      parameters:
-        - name: entity
-          in: path
-          required: true
-          description: The entity name for which the report should be generated.
-          schema:
-            type: string
-        - name: format
-          in: query
-          required: true
-          description: The format of the report to be generated.
-          schema:
-            type: string
-            enum:
-              - CSV
-              - MARKDOWN
-              - JSON
-              - XML
-              - RTF
-      responses:
-        '200':
-          description: Report successfully generated
-          content:
-            application/json:
-              schema:
-                type: object
-                description: The generated report content.
-        '400':
-          description: Bad Request - Invalid format or missing format parameter
-          content:
-            text/plain:
-              schema:
-                type: string
-        '404':
-          description: Entity not found
-          content:
-            text/plain:
-              schema:
-                type: string
+                  success:
+                    type: boolean
+                  message:
+                    type: string
+ 
+components:
+  schemas:
+    FilterItem:
+      type: object
+      properties:
+        key:
+          type: string
+        value:
+          type: string
+        operation:
+          type: string
+          enum:
+            - EQUAL
+            - LIKE
+    Filters:
+      type: array  # Исправлено с "list" на "array"
+      items:       # Исправлено с "item" на "items"
+        $ref: '#/components/schemas/FilterItem'

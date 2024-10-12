@@ -1,4 +1,5 @@
 from abc import abstractmethod, ABC
+from enum import Enum
 from typing import get_origin, get_args, get_type_hints
 
 from src.core.abstractions.abstract_entity import AbstractEntity
@@ -99,6 +100,16 @@ class AbstractSerializer(ABC):
             if type_hint_name not in properties.keys():
                 continue
 
+            field_class = properties[type_hint_name]
+
+            if issubclass(field_class, Enum):
+                for value in field_class.__members__.values():
+                    if value.value == data[prop] or value.name == data[prop]:
+                        setattr(instance, prop, value)
+                        break
+    
+                continue
+        
             setattr(instance, prop, self.from_dict(value, properties[type_hint_name]))
 
         return instance
