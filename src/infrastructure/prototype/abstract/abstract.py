@@ -1,21 +1,15 @@
+from abc import ABC
+
 from src.infrastructure.filter.item.item import FilterItem
 from src.infrastructure.filter.operation_mapper.operation_mapper import FilterOperationTypeMapper
 from src.infrastructure.serializers.json_serializer import JsonSerializer
-from abc import ABC
 
-primitive_types = (str, int, float, bool)
-
-def parse_fields(obj):
-    if isinstance(obj, primitive_types):
-        return []
-    if obj is None:
-        return []
-    return list(filter(lambda x: not x.startswith("_") and not callable(getattr(obj.__class__, x)), dir(obj)))
 
 class AbstractPrototype(ABC):
     _mapper: FilterOperationTypeMapper
     _data: list
     _serializer: JsonSerializer
+    __primitives = (int, str, float, bool)
     
     def create(self, filters: list[FilterItem]) -> list:
         result = self._data
@@ -30,10 +24,17 @@ class AbstractPrototype(ABC):
         self._mapper = mapper
         self._data = data
         self._serializer = JsonSerializer()
+
+    def parse_fields(self, obj):
+        if isinstance(obj, self.__primitives):
+            return []
+        if obj is None:
+            return []
+        return list(filter(lambda x: not x.startswith("_") and not callable(getattr(obj.__class__, x)), dir(obj)))
         
     def __check_item(self, data, key, value, operation) -> bool:
 
-        properties = parse_fields(data)
+        properties = self.parse_fields(data)
 
         acceptable = False
         
@@ -59,7 +60,6 @@ class AbstractPrototype(ABC):
                 result.append(item)
         
         return result
-        
         
     def get_by_filter_item(self, data: list, filter_tem: FilterItem) -> list:
         
