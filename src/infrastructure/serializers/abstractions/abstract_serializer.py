@@ -4,12 +4,16 @@ from typing import get_origin, get_args, get_type_hints
 
 from src.core.abstractions.abstract_entity import AbstractEntity
 from src.core.exceptions.validation_exception import TypeValidationException
+from src.infrastructure.serializers.datetime_mapper import DatetimeMapper
 from src.infrastructure.serializers.timedelta_mapper import TimedeltaMapper
 
 
 class AbstractSerializer(ABC):
     __primitives = [int, str, float, bool]
-    __mappers = [TimedeltaMapper()]
+    __mappers = [
+        TimedeltaMapper(),
+        DatetimeMapper(),
+    ]
 
     @abstractmethod
     def serialize(self, obj):
@@ -88,6 +92,7 @@ class AbstractSerializer(ABC):
             return [self.from_dict(i, list_type) for i in data]
 
         instance = obj_type.__new__(obj_type, obj_type)
+        
 
         properties = get_type_hints(obj_type)
 
