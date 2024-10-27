@@ -67,6 +67,68 @@ paths:
                     type: boolean
                   message:
                     type: string
+  /reports/formats:
+    get:
+      summary: Get available report formats
+      operationId: src.api.routes.reports.get_report_formats
+      description: Retrieve a list of all available report formats.
+      responses:
+        '200':
+          description: A list of report formats
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  formats:
+                    type: array
+                    items:
+                      type: string
+                      
+  /reports/report/{entity}:
+    get:
+      summary: Generate report for a specific entity
+      operationId: src.api.routes.reports.get_report
+      description: Retrieve a report for the specified entity in a given format.
+      parameters:
+        - name: entity
+          in: path
+          required: true
+          description: The entity name for which the report should be generated.
+          schema:
+            type: string
+        - name: format
+          in: query
+          required: true
+          description: The format of the report to be generated.
+          schema:
+            type: string
+            enum:
+              - CSV
+              - MARKDOWN
+              - JSON
+              - XML
+              - RTF
+      responses:
+        '200':
+          description: Report successfully generated
+          content:
+            application/json:
+              schema:
+                type: object
+                description: The generated report content.
+        '400':
+          description: Bad Request - Invalid format or missing format parameter
+          content:
+            text/plain:
+              schema:
+                type: string
+        '404':
+          description: Entity not found
+          content:
+            text/plain:
+              schema:
+                type: string
 components:
   schemas:
     StoreTurnoverDTO:

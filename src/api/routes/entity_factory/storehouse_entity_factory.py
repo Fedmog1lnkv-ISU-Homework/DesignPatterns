@@ -1,7 +1,9 @@
+from src.api.routes.entity_factory.abstractions.report_entity_factory import ReportEntityFactory
+from src.core.models.storehouse_model import StoreHouseModel
 from src.infrastructure.repositories.storehouse_repository import StoreHouseRepository
 
 
-class StoreHouseEntityFactory():
+class StoreHouseEntityFactory(ReportEntityFactory[list[StoreHouseModel]]):
     
     __repository: StoreHouseRepository = StoreHouseRepository()
     

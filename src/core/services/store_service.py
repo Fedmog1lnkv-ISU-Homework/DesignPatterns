@@ -23,7 +23,7 @@ class StoreManager(AbstractManager):
     
     def calculate_turnovers(self, dto: StoreTurnoverDTO) -> list[StoreTurnover]:
         
-        date_filter = FilterItem
+        date_filter = FilterItem()
         
         date_filter.key = 'date'
         date_filter.value = [dto.start_time, dto.end_time]
