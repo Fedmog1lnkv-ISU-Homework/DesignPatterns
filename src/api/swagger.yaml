@@ -1,14 +1,35 @@
 openapi: "3.0.0"
-
 info:
   description: Набор методов для учёта предприятия
   version: 1.0.0
   title: RestApi
-  
 servers:
   - url: /api
     description: Base URL for the API
 paths:
+  /api/store/turnover:
+    post:
+      summary: Добавить фильтр для отчета по домену
+      operationId: src.api.routes.store.get_turnovers
+      requestBody:
+        description: DTO модель для фильтрации
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/StoreTurnoverDTO'
+      responses:
+        200:
+          description: Фильтр успешно добавлен
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  message:
+                    type: string
   /api/prototype/{entity}:
     post:
       summary: Добавить фильтр для отчета по домену
@@ -25,7 +46,9 @@ paths:
               - nomenclatures
               - nomenclature_groups
               - measurement_units
-      requestBody:  # Исправлено с "parameters" на "requestBody"
+              - store_transaction
+              - storehouse
+      requestBody:
         description: DTO модель для фильтрации
         required: true
         content:
@@ -44,22 +67,99 @@ paths:
                     type: boolean
                   message:
                     type: string
- 
+  /reports/formats:
+    get:
+      summary: Get available report formats
+      operationId: src.api.routes.reports.get_report_formats
+      description: Retrieve a list of all available report formats.
+      responses:
+        '200':
+          description: A list of report formats
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  formats:
+                    type: array
+                    items:
+                      type: string
+                      
+  /reports/report/{entity}:
+    get:
+      summary: Generate report for a specific entity
+      operationId: src.api.routes.reports.get_report
+      description: Retrieve a report for the specified entity in a given format.
+      parameters:
+        - name: entity
+          in: path
+          required: true
+          description: The entity name for which the report should be generated.
+          schema:
+            type: string
+        - name: format
+          in: query
+          required: true
+          description: The format of the report to be generated.
+          schema:
+            type: string
+            enum:
+              - CSV
+              - MARKDOWN
+              - JSON
+              - XML
+              - RTF
+      responses:
+        '200':
+          description: Report successfully generated
+          content:
+            application/json:
+              schema:
+                type: object
+                description: The generated report content.
+        '400':
+          description: Bad Request - Invalid format or missing format parameter
+          content:
+            text/plain:
+              schema:
+                type: string
+        '404':
+          description: Entity not found
+          content:
+            text/plain:
+              schema:
+                type: string
 components:
   schemas:
+    StoreTurnoverDTO:
+      type: object
+      properties:
+        filters:
+          type: array
+          items:
+            $ref: '#/components/schemas/FilterItem'
+        start_time:
+          type: integer
+        end_time:
+          type: integer
     FilterItem:
       type: object
       properties:
         key:
           type: string
         value:
-          type: string
+          oneOf:
+            - type: string
+            - type: number
+            - type: boolean
+            - type: array
         operation:
           type: string
           enum:
             - EQUAL
             - LIKE
+            - BETWEEN
     Filters:
-      type: array  # Исправлено с "list" на "array"
-      items:       # Исправлено с "item" на "items"
+      type: array
+      items:
         $ref: '#/components/schemas/FilterItem'

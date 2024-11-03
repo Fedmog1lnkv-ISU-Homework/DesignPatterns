@@ -1,3 +1,6 @@
+from src.api.routes.entity_factory.storehouse_entity_factory import StoreHouseEntityFactory
+from src.api.routes.entity_factory.storetransaction_entity_factory import StoreTransactionEntityFactory
+from src.core.models.store_transaction import StoreTransaction
 from src.core.services.prototype import PrototypeService
 from src.infrastructure.filter.item.item import FilterItem
 from src.infrastructure.serializers.json_serializer import JsonSerializer
@@ -12,7 +15,9 @@ __entity_factories = [
     NomenclatureEntityFactory(),
     RecipeEntityFactory(),
     UnitEntityFactory(),
-    NomenclatureGroupEntityFactory()
+    NomenclatureGroupEntityFactory(),
+    StoreHouseEntityFactory(),
+    StoreTransactionEntityFactory(),
 ]
 
 prototype_service = PrototypeService()

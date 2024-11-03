@@ -46,6 +46,16 @@ class UnitModel(AbstractEntity):
     def base_unit(self):
         return self.__base_unit
 
+    def get_super_base_unit(self) -> 'UnitModel':
+        unit = self
+        total_conversion_factor = self.conversion_factor
+        
+        while unit.base_unit is not None:
+            unit = unit.base_unit
+            total_conversion_factor *= unit.conversion_factor
+        
+        return unit
+
     @base_unit.setter
     def base_unit(self, unit):
         if unit is None:

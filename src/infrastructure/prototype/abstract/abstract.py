@@ -1,5 +1,6 @@
 from abc import ABC
 
+from src.infrastructure.factory.type_caster import TypeCaster
 from src.infrastructure.filter.item.item import FilterItem
 from src.infrastructure.filter.operation_mapper.operation_mapper import FilterOperationTypeMapper
 from src.infrastructure.serializers.json_serializer import JsonSerializer
@@ -10,6 +11,7 @@ class AbstractPrototype(ABC):
     _data: list
     _serializer: JsonSerializer
     __primitives = (int, str, float, bool)
+    _type_caster = TypeCaster()
     
     def create(self, filters: list[FilterItem]) -> list:
         result = self._data
@@ -33,23 +35,37 @@ class AbstractPrototype(ABC):
         return list(filter(lambda x: not x.startswith("_") and not callable(getattr(obj.__class__, x)), dir(obj)))
         
     def __check_item(self, data, key, value, operation) -> bool:
-
         properties = self.parse_fields(data)
 
         acceptable = False
+        
+        current_key, new_key = self.__split_key(key)
         
         for property_iem in properties:
             if acceptable:
                 break
             property_value = getattr(data, property_iem)
             
-            if property_iem == key:
-                acceptable = operation(property_value, value)
-            else:
+            if property_iem == current_key:
+                if new_key is not None:
+                    return self.__check_item(property_value, new_key, value, operation)
+                
+                casted_value = self._type_caster.cast_to_type(value, type(property_value))
+                acceptable = operation(property_value, casted_value)
+                
+            elif isinstance(property_value, type(data)): #recurcive
                 acceptable = self.__check_item(property_value, key, value, operation)
                 
         return acceptable
             
+    def __split_key(self, key: str):
+        keys = key.split(".")
+        if len(keys) == 0:
+            return "", ""
+        if len(keys) > 1:
+            return keys[0], ".".join(keys[1:])
+        
+        return keys[0], None 
             
     def __check_list(self, data: list, key: str, value, operation) -> list:
         

@@ -3,6 +3,8 @@ from flask import Blueprint, request
 from src.api.routes.entity_factory.nomenclature_entity_factory import NomenclatureEntityFactory
 from src.api.routes.entity_factory.nomenclature_group_entity_factory import NomenclatureGroupEntityFactory
 from src.api.routes.entity_factory.recipe_entity_factory import RecipeEntityFactory
+from src.api.routes.entity_factory.storehouse_entity_factory import StoreHouseEntityFactory
+from src.api.routes.entity_factory.storetransaction_entity_factory import StoreTransactionEntityFactory
 from src.api.routes.entity_factory.unit_entity_factory import UnitEntityFactory
 from src.core.enums.report_format import ReportFormat
 from src.core.services.settings_manager import SettingsManager
@@ -12,7 +14,9 @@ __entity_factories = [
     NomenclatureEntityFactory(),
     RecipeEntityFactory(),
     UnitEntityFactory(),
-    NomenclatureGroupEntityFactory()
+    NomenclatureGroupEntityFactory(),
+    StoreHouseEntityFactory(),
+    StoreTransactionEntityFactory()
 ]
 
 reports_blueprint = Blueprint('/api/reports', __name__, url_prefix='/api/reports')
