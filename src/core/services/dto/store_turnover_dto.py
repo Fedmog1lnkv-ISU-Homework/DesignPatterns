@@ -6,7 +6,7 @@ from src.infrastructure.filter.item.item import FilterItem
 
 class StoreTurnoverDTO(AbstractEntity):
     
-    __filters: list[FilterItem] = None
+    __filters: list[FilterItem] = []
     __start_time: datetime = None
     __end_time: datetime = None
     

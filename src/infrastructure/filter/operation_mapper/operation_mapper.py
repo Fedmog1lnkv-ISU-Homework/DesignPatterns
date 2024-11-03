@@ -16,7 +16,7 @@ class FilterOperationTypeMapper:
         if len(b) != 2:
             return False
 
-        return b[0] <= a <= b[1]
+        return b[0] < a <= b[1]
     
     __operations_map = {
         FilterOperationType.EQUAL: equal,

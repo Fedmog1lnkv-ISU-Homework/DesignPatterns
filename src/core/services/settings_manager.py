@@ -1,5 +1,6 @@
 from src.core.abstractions.abstract_manager import AbstractManager
 from src.core.models.settings import Settings
+from src.core.services.dto.update_date_block_dto import UpdateDateBlockDTO
 from src.infrastructure.repositories.settings_repository import SettingsRepository
 
 
@@ -37,6 +38,15 @@ class SettingsManager(AbstractManager):
                 setattr(settings, field, value)
 
         return settings
+
+    def update_date_block(self, dto: UpdateDateBlockDTO) -> None:
+        if dto.value < self._settings.date_block:
+            raise ValueError("Нельзя уменьшить дату блока")
+
+        self._settings.date_block = dto.value
+
+    def save_settings(self, file_name: str = "settings.json") -> None:
+        self._repository.save_settings(self._settings)
 
     @property
     def settings(self) -> Settings:

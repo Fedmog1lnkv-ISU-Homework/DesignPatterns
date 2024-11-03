@@ -7,6 +7,43 @@ servers:
   - url: /api
     description: Base URL for the API
 paths:
+  /api/settings:
+    get:
+      summary: Получить настройки
+      operationId: src.api.routes.settings.get_settings
+      responses:
+        200:
+          description: Настройки успешно получены
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  settings:
+                    type: object
+
+  /api/settings/date_block:
+    post:
+      summary: Обновить дату блокировки
+      operationId: src.api.routes.settings.update_date_block
+      requestBody:
+        description: DTO модель для обновления даты блокировки
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DateBlockDTO'
+      responses:
+        200:
+          description: Дата блокировки успешно обновлена
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  settings:
+                    type: object
+
   /api/store/turnover:
     post:
       summary: Добавить фильтр для отчета по домену
@@ -131,6 +168,11 @@ paths:
                 type: string
 components:
   schemas:
+    DateBlockDTO:
+      type: object
+      properties:
+        value:
+          type: integer
     StoreTurnoverDTO:
       type: object
       properties:
