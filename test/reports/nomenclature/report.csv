@@ -1,3 +1,6 @@
-group.name,group.unique_code,name,units.name,units.conversion_factor,units.base_unit.name,units.base_unit.conversion_factor,units.base_unit.base_unit,units.base_unit.unique_code,units.unique_code,unique_code
-Ингредиенты,52e3a6a0-5191-407b-9418-a5f6ad0f5e5b,name1,килограмм,1000.0,грамм,1.0,,2c4caecc-554a-4fed-986a-36ba4b9c72e9,a843c1ea-952e-42ee-ac19-21a0a253972b,36954e27-aa00-49a5-b20a-a8ba64e4e78b
-Ингредиенты,52e3a6a0-5191-407b-9418-a5f6ad0f5e5b,name2,килограмм,1000.0,грамм,1.0,,2c4caecc-554a-4fed-986a-36ba4b9c72e9,a843c1ea-952e-42ee-ac19-21a0a253972b,ae60a09b-4486-4be6-9b3c-bc168d68f1da
+group.name,group.unique_code,name,units.name,units.conversion_factor,units.base_unit.name,units.base_unit.conversion_factor,units.base_unit.base_unit,units.base_unit.unique_code,units.unique_code,unique_code
+
+Ингредиенты,52e3a6a0-5191-407b-9418-a5f6ad0f5e5b,name1,килограмм,1000.0,грамм,1.0,,2c4caecc-554a-4fed-986a-36ba4b9c72e9,a843c1ea-952e-42ee-ac19-21a0a253972b,36954e27-aa00-49a5-b20a-a8ba64e4e78b
+
+Ингредиенты,52e3a6a0-5191-407b-9418-a5f6ad0f5e5b,name2,килограмм,1000.0,грамм,1.0,,2c4caecc-554a-4fed-986a-36ba4b9c72e9,a843c1ea-952e-42ee-ac19-21a0a253972b,ae60a09b-4486-4be6-9b3c-bc168d68f1da
+

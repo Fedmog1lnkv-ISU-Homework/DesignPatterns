@@ -45,8 +45,8 @@ class SettingsRepository:
         try:
             full_name = f"{os.curdir}{os.sep}{self._file_name}"
 
-            with open(full_name, 'w') as stream:
-                json.dump(settings.to_json(), stream, indent=4)
+            with open(full_name, 'w', encoding='utf-8') as stream:
+                json.dump(settings.to_json(), stream, indent=4, ensure_ascii=False)
 
         except IOError as e:
             print(f"Ошибка записи в файл {self._file_name}: {e}")

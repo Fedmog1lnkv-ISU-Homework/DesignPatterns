@@ -2,6 +2,7 @@ from flasgger import Swagger
 
 from src.api.app import app
 from src.core.services.start_manager import StartManager
+from src.core.services.store_service import StoreManager
 
 test_dict = {
     "inn": "123456789012",  # 12 символов
@@ -14,6 +15,10 @@ test_dict = {
 
 if __name__ == "__main__":
     StartManager()
+
+    store_manager = StoreManager()
+
+    store_manager.init_store_turnovers_by_date_block()
 
     Swagger(app.app, template_file="swagger.yaml")
 

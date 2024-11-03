@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from src.core.abstractions.abstract_entity import AbstractEntity
 from src.core.enums.report_format import ReportFormat
 from src.core.exceptions.validation_exception import TypeValidationException, LengthValidationException
@@ -19,6 +21,7 @@ class Settings(AbstractEntity):
     __name: str = ""
     __type_of_ownership: str = ""
     __default_report_format: ReportFormat = ReportFormat.CSV
+    __date_block: datetime = None
     __report_map: dict[ReportFormat, type] = {
         ReportFormat.CSV: CsvReport,
         ReportFormat.MARKDOWN: MarkdownReport,
@@ -133,8 +136,23 @@ class Settings(AbstractEntity):
             "correspondent_account": self.correspondent_account,
             "bic": self.bic,
             "name": self.name,
-            "type_of_ownership": self.type_of_ownership
+            "type_of_ownership": self.type_of_ownership,
+            "date_block": int(self.date_block.timestamp())
         }
+
+    @property
+    def date_block(self):
+        return self.__date_block
+
+    @date_block.setter
+    def date_block(self, value: datetime | int):
+        if not isinstance(value, (datetime | int)):
+            raise TypeValidationException(value, datetime)
+
+        if isinstance(value, int):
+            value = datetime.fromtimestamp(value)
+
+        self.__date_block = value
 
     def set_compare_mode(self, other) -> bool:
         return super().set_compare_mode(other)

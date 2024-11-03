@@ -20,5 +20,8 @@ class AbstractDataSource(Generic[T]):
     def delete(self, key: str):
         del self.__data[key]
 
+    def delete_all(self):
+        self.__data = {}
+
     def is_not_empty(self):
         return len(self.__data.keys()) > 0
