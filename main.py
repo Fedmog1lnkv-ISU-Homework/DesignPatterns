@@ -1,8 +1,10 @@
 from flasgger import Swagger
 
 from src.api.app import app
+from src.core.services.recipe_manager import RecipeManager
 from src.core.services.start_manager import StartManager
 from src.core.services.store_service import StoreManager
+from src.utils.observer.observer import ObserverManager
 
 test_dict = {
     "inn": "123456789012",  # 12 символов
@@ -14,6 +16,7 @@ test_dict = {
 }
 
 if __name__ == "__main__":
+    
     StartManager()
 
     store_manager = StoreManager()

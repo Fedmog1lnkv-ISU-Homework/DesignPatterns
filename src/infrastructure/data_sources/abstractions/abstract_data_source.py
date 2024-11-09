@@ -8,10 +8,14 @@ class AbstractDataSource(Generic[T]):
     def __init__(self):
         self.__data = {}
 
-    def create(self, value: T):
+    def create(self, value: T) -> T:
         self.__data[value.unique_code] = value
+        
+        return value 
 
     def get(self, key: str) -> T | None:
+        if key not in self.__data.keys():
+            return None
         return self.__data[key]
 
     def get_all(self) -> list[T]:

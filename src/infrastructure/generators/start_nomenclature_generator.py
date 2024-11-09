@@ -5,6 +5,9 @@ from src.infrastructure.generators.start_unit_generator import StartUnitGenerato
 
 class StartNomenclatureGenerator:
     _instance = None
+    
+    __list_nomenclatures = []
+    __list_groups = []
 
     def __new__(cls):
         if cls._instance is None:
@@ -12,6 +15,10 @@ class StartNomenclatureGenerator:
         return cls._instance
 
     def __init__(self):
+        
+        if len(self.__list_nomenclatures) > 0 and len(self.__list_groups) > 0:
+            return
+        
         generator = StartUnitGenerator()
 
         self.__group = NomenclatureGroup('Еда')
@@ -27,12 +34,8 @@ class StartNomenclatureGenerator:
         self.__dairy_cream = Nomenclature('Сливки', self.__group, generator.get_liters())
         self.__bell_pepper = Nomenclature('Болгарский перец', self.__group, generator.get_things())
         self.__water = Nomenclature('Вода', self.__group, generator.get_liters())
-
-    def get_groups(self) -> list[NomenclatureGroup]:
-        return [self.__group]
-
-    def get_nomenclatures(self) -> list[Nomenclature]:
-        return [
+        
+        self.__list_nomenclatures = [
             self.__wheat_flour,
             self.__sugar,
             self.__butter,
@@ -45,6 +48,14 @@ class StartNomenclatureGenerator:
             self.__bell_pepper,
             self.__water
         ]
+        
+        self.__list_groups = [self.__group]
+
+    def get_groups(self) -> list[NomenclatureGroup]:
+        return self.__list_groups
+
+    def get_nomenclatures(self) -> list[Nomenclature]:
+        return self.__list_nomenclatures
 
     def get_wheat_flour(self) -> Nomenclature:
         return self.__wheat_flour

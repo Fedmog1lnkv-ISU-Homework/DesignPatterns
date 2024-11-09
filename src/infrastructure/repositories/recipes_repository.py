@@ -15,3 +15,6 @@ class RecipesRepository:
 
     def get_all(self) -> list[Recipe]:
         return self.__recipes_data_source.get_all()
+    
+    def update(self, recipe: Recipe) -> Recipe:
+        return self.__recipes_data_source.create(recipe)

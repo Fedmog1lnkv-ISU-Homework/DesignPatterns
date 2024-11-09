@@ -3,6 +3,8 @@ from src.core.models.unit_model import UnitModel
 
 class StartUnitGenerator:
     _instance = None
+    
+    __list = []
 
     def __new__(cls):
         if cls._instance is None:
@@ -10,6 +12,9 @@ class StartUnitGenerator:
         return cls._instance
 
     def __init__(self):
+        if len(self.__list) > 0:
+            return
+        
         self.__grams = UnitModel('гр', 1)
         self.__kilograms = UnitModel('кг', 1000, self.__grams)
 
@@ -18,9 +23,8 @@ class StartUnitGenerator:
 
         self.__milliliters = UnitModel('мл', 1)
         self.__liters = UnitModel('л', 1000, self.__milliliters)
-
-    def get_units(self) -> list[UnitModel]:
-        return [
+        
+        self.__list = [
             self.__grams,
             self.__kilograms,
             self.__things,
@@ -28,6 +32,9 @@ class StartUnitGenerator:
             self.__milliliters,
             self.__liters
         ]
+
+    def get_units(self) -> list[UnitModel]:
+        return self.__list
 
     def get_grams(self) -> UnitModel:
         return self.__grams
