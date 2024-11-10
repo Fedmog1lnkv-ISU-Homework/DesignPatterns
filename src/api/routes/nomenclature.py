@@ -1,13 +1,10 @@
+from flask import Blueprint, request
 
-from src.core.models.nomenclature_model import Nomenclature
 from src.core.services.dto.create_nomenclature import CreateNomenclatureDTO
-from src.core.services.dto.store_turnover_dto import StoreTurnoverDTO
 from src.core.services.dto.update_nomenclature import UpdateNomenclatureDTO
 from src.core.services.nomenclature import NomenclatureManager
-from src.core.services.recipe_manager import RecipeManager
 from src.core.services.store_service import StoreManager
 from src.infrastructure.serializers.json_serializer import JsonSerializer
-from flask import Blueprint, request
 
 store_service = StoreManager()
 json_serializer = JsonSerializer()
@@ -47,6 +44,6 @@ def update_nomenclature(id):
 
 @nomenclature_blueprint.route('/<id>', methods=['DELETE'])
 def delete_nomenclature(id):
-    result = nomenclature_manager.delete(id)
+    nomenclature_manager.delete(id)
 
-    return json_serializer.serialize_to_dict(result)
+    return "", 204
