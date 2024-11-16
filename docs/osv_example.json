@@ -1,0 +1,1010 @@
+[
+  {
+    "end_amount": -36,
+    "end_date": 1730134800,
+    "nomenclature": {
+      "group": {
+        "name": "Еда",
+        "unique_code": "4480fd55-af15-4828-878b-d55e9cd2099c"
+      },
+      "name": "Пшеничная мука",
+      "unique_code": "e891b718-9051-4b02-81bd-ec8f01cc44f0",
+      "units": {
+        "base_unit": {
+          "base_unit": null,
+          "conversion_factor": 1,
+          "name": "гр",
+          "unique_code": "c99de99a-7a18-42b0-af37-2a0b63ebde80"
+        },
+        "conversion_factor": 1000,
+        "name": "кг",
+        "unique_code": "450628ef-5639-4b3f-9ce9-15b8825db110"
+      }
+    },
+    "start_amount": -5,
+    "start_date": 1729789200,
+    "storehouse": {
+      "location": "location 1",
+      "name": "Main storehouse",
+      "unique_code": "1ecacb3b-7ddd-40d0-b4ea-c1d0052507b0"
+    },
+    "unique_code": "84236691-9399-4ae4-8584-23df50a47adc"
+  },
+  {
+    "end_amount": -1,
+    "end_date": 1730134800,
+    "nomenclature": {
+      "group": {
+        "name": "Еда",
+        "unique_code": "4480fd55-af15-4828-878b-d55e9cd2099c"
+      },
+      "name": "Пшеничная мука",
+      "unique_code": "e891b718-9051-4b02-81bd-ec8f01cc44f0",
+      "units": {
+        "base_unit": {
+          "base_unit": null,
+          "conversion_factor": 1,
+          "name": "гр",
+          "unique_code": "c99de99a-7a18-42b0-af37-2a0b63ebde80"
+        },
+        "conversion_factor": 1000,
+        "name": "кг",
+        "unique_code": "450628ef-5639-4b3f-9ce9-15b8825db110"
+      }
+    },
+    "start_amount": 3,
+    "start_date": 1729789200,
+    "storehouse": {
+      "location": "location 2",
+      "name": "Second storehouse",
+      "unique_code": "1d42661e-368b-4cee-9c97-ba0f9818d76d"
+    },
+    "unique_code": "dded1997-dea0-42f5-bc1d-b72b442700f4"
+  },
+  {
+    "end_amount": -7,
+    "end_date": 1730134800,
+    "nomenclature": {
+      "group": {
+        "name": "Еда",
+        "unique_code": "4480fd55-af15-4828-878b-d55e9cd2099c"
+      },
+      "name": "Пшеничная мука",
+      "unique_code": "e891b718-9051-4b02-81bd-ec8f01cc44f0",
+      "units": {
+        "base_unit": {
+          "base_unit": null,
+          "conversion_factor": 1,
+          "name": "гр",
+          "unique_code": "c99de99a-7a18-42b0-af37-2a0b63ebde80"
+        },
+        "conversion_factor": 1000,
+        "name": "кг",
+        "unique_code": "450628ef-5639-4b3f-9ce9-15b8825db110"
+      }
+    },
+    "start_amount": 8,
+    "start_date": 1729789200,
+    "storehouse": {
+      "location": "location 1",
+      "name": "Third storehouse",
+      "unique_code": "426f4f45-3bcb-43bd-9080-b6a70f4aa2c7"
+    },
+    "unique_code": "2c934de9-ee57-4da0-93b7-b1f13a3dc2dc"
+  },
+  {
+    "end_amount": 3,
+    "end_date": 1730134800,
+    "nomenclature": {
+      "group": {
+        "name": "Еда",
+        "unique_code": "4480fd55-af15-4828-878b-d55e9cd2099c"
+      },
+      "name": "Сахар",
+      "unique_code": "64251bf8-5ec6-482f-b5b6-fb6ef9d7fa15",
+      "units": {
+        "base_unit": {
+          "base_unit": null,
+          "conversion_factor": 1,
+          "name": "гр",
+          "unique_code": "c99de99a-7a18-42b0-af37-2a0b63ebde80"
+        },
+        "conversion_factor": 1000,
+        "name": "кг",
+        "unique_code": "450628ef-5639-4b3f-9ce9-15b8825db110"
+      }
+    },
+    "start_amount": 3,
+    "start_date": 1729789200,
+    "storehouse": {
+      "location": "location 1",
+      "name": "Main storehouse",
+      "unique_code": "1ecacb3b-7ddd-40d0-b4ea-c1d0052507b0"
+    },
+    "unique_code": "b8615075-efe6-437e-8c70-5c480e4a3801"
+  },
+  {
+    "end_amount": 73,
+    "end_date": 1730134800,
+    "nomenclature": {
+      "group": {
+        "name": "Еда",
+        "unique_code": "4480fd55-af15-4828-878b-d55e9cd2099c"
+      },
+      "name": "Сахар",
+      "unique_code": "64251bf8-5ec6-482f-b5b6-fb6ef9d7fa15",
+      "units": {
+        "base_unit": {
+          "base_unit": null,
+          "conversion_factor": 1,
+          "name": "гр",
+          "unique_code": "c99de99a-7a18-42b0-af37-2a0b63ebde80"
+        },
+        "conversion_factor": 1000,
+        "name": "кг",
+        "unique_code": "450628ef-5639-4b3f-9ce9-15b8825db110"
+      }
+    },
+    "start_amount": 9,
+    "start_date": 1729789200,
+    "storehouse": {
+      "location": "location 2",
+      "name": "Second storehouse",
+      "unique_code": "1d42661e-368b-4cee-9c97-ba0f9818d76d"
+    },
+    "unique_code": "7c023196-3b80-4095-9cd9-0ff9c180b2dd"
+  },
+  {
+    "end_amount": 0,
+    "end_date": 1730134800,
+    "nomenclature": {
+      "group": {
+        "name": "Еда",
+        "unique_code": "4480fd55-af15-4828-878b-d55e9cd2099c"
+      },
+      "name": "Сахар",
+      "unique_code": "64251bf8-5ec6-482f-b5b6-fb6ef9d7fa15",
+      "units": {
+        "base_unit": {
+          "base_unit": null,
+          "conversion_factor": 1,
+          "name": "гр",
+          "unique_code": "c99de99a-7a18-42b0-af37-2a0b63ebde80"
+        },
+        "conversion_factor": 1000,
+        "name": "кг",
+        "unique_code": "450628ef-5639-4b3f-9ce9-15b8825db110"
+      }
+    },
+    "start_amount": -2,
+    "start_date": 1729789200,
+    "storehouse": {
+      "location": "location 1",
+      "name": "Third storehouse",
+      "unique_code": "426f4f45-3bcb-43bd-9080-b6a70f4aa2c7"
+    },
+    "unique_code": "efcbe262-ed25-4f4d-bdb2-ccf1ff5688de"
+  },
+  {
+    "end_amount": 9,
+    "end_date": 1730134800,
+    "nomenclature": {
+      "group": {
+        "name": "Еда",
+        "unique_code": "4480fd55-af15-4828-878b-d55e9cd2099c"
+      },
+      "name": "Сливочное масло",
+      "unique_code": "14f43441-1b7b-4cdb-9d75-716f34b19839",
+      "units": {
+        "base_unit": {
+          "base_unit": null,
+          "conversion_factor": 1,
+          "name": "гр",
+          "unique_code": "c99de99a-7a18-42b0-af37-2a0b63ebde80"
+        },
+        "conversion_factor": 1000,
+        "name": "кг",
+        "unique_code": "450628ef-5639-4b3f-9ce9-15b8825db110"
+      }
+    },
+    "start_amount": 4,
+    "start_date": 1729789200,
+    "storehouse": {
+      "location": "location 1",
+      "name": "Main storehouse",
+      "unique_code": "1ecacb3b-7ddd-40d0-b4ea-c1d0052507b0"
+    },
+    "unique_code": "a678df5f-c9f5-4a13-a1ce-44dce3e7b788"
+  },
+  {
+    "end_amount": -46,
+    "end_date": 1730134800,
+    "nomenclature": {
+      "group": {
+        "name": "Еда",
+        "unique_code": "4480fd55-af15-4828-878b-d55e9cd2099c"
+      },
+      "name": "Сливочное масло",
+      "unique_code": "14f43441-1b7b-4cdb-9d75-716f34b19839",
+      "units": {
+        "base_unit": {
+          "base_unit": null,
+          "conversion_factor": 1,
+          "name": "гр",
+          "unique_code": "c99de99a-7a18-42b0-af37-2a0b63ebde80"
+        },
+        "conversion_factor": 1000,
+        "name": "кг",
+        "unique_code": "450628ef-5639-4b3f-9ce9-15b8825db110"
+      }
+    },
+    "start_amount": -7,
+    "start_date": 1729789200,
+    "storehouse": {
+      "location": "location 2",
+      "name": "Second storehouse",
+      "unique_code": "1d42661e-368b-4cee-9c97-ba0f9818d76d"
+    },
+    "unique_code": "e25b7943-2856-4fa0-bef7-c7c1e0254d7f"
+  },
+  {
+    "end_amount": -7,
+    "end_date": 1730134800,
+    "nomenclature": {
+      "group": {
+        "name": "Еда",
+        "unique_code": "4480fd55-af15-4828-878b-d55e9cd2099c"
+      },
+      "name": "Сливочное масло",
+      "unique_code": "14f43441-1b7b-4cdb-9d75-716f34b19839",
+      "units": {
+        "base_unit": {
+          "base_unit": null,
+          "conversion_factor": 1,
+          "name": "гр",
+          "unique_code": "c99de99a-7a18-42b0-af37-2a0b63ebde80"
+        },
+        "conversion_factor": 1000,
+        "name": "кг",
+        "unique_code": "450628ef-5639-4b3f-9ce9-15b8825db110"
+      }
+    },
+    "start_amount": 9,
+    "start_date": 1729789200,
+    "storehouse": {
+      "location": "location 1",
+      "name": "Third storehouse",
+      "unique_code": "426f4f45-3bcb-43bd-9080-b6a70f4aa2c7"
+    },
+    "unique_code": "fddf8a06-af07-4a62-b383-566f9ee1a017"
+  },
+  {
+    "end_amount": 18,
+    "end_date": 1730134800,
+    "nomenclature": {
+      "group": {
+        "name": "Еда",
+        "unique_code": "4480fd55-af15-4828-878b-d55e9cd2099c"
+      },
+      "name": "Яйцо",
+      "unique_code": "0497e7bd-1c73-4682-a3e6-2f455ce835bf",
+      "units": {
+        "base_unit": {
+          "base_unit": null,
+          "conversion_factor": 1,
+          "name": "гр",
+          "unique_code": "c99de99a-7a18-42b0-af37-2a0b63ebde80"
+        },
+        "conversion_factor": 1000,
+        "name": "кг",
+        "unique_code": "450628ef-5639-4b3f-9ce9-15b8825db110"
+      }
+    },
+    "start_amount": 9,
+    "start_date": 1729789200,
+    "storehouse": {
+      "location": "location 1",
+      "name": "Main storehouse",
+      "unique_code": "1ecacb3b-7ddd-40d0-b4ea-c1d0052507b0"
+    },
+    "unique_code": "1d59613b-8dba-4a66-ae17-2d4841527672"
+  },
+  {
+    "end_amount": -5,
+    "end_date": 1730134800,
+    "nomenclature": {
+      "group": {
+        "name": "Еда",
+        "unique_code": "4480fd55-af15-4828-878b-d55e9cd2099c"
+      },
+      "name": "Яйцо",
+      "unique_code": "0497e7bd-1c73-4682-a3e6-2f455ce835bf",
+      "units": {
+        "base_unit": {
+          "base_unit": null,
+          "conversion_factor": 1,
+          "name": "гр",
+          "unique_code": "c99de99a-7a18-42b0-af37-2a0b63ebde80"
+        },
+        "conversion_factor": 1000,
+        "name": "кг",
+        "unique_code": "450628ef-5639-4b3f-9ce9-15b8825db110"
+      }
+    },
+    "start_amount": 6,
+    "start_date": 1729789200,
+    "storehouse": {
+      "location": "location 2",
+      "name": "Second storehouse",
+      "unique_code": "1d42661e-368b-4cee-9c97-ba0f9818d76d"
+    },
+    "unique_code": "3cb41ef9-6d65-494d-9ea7-929f4fa9b761"
+  },
+  {
+    "end_amount": 10,
+    "end_date": 1730134800,
+    "nomenclature": {
+      "group": {
+        "name": "Еда",
+        "unique_code": "4480fd55-af15-4828-878b-d55e9cd2099c"
+      },
+      "name": "Яйцо",
+      "unique_code": "0497e7bd-1c73-4682-a3e6-2f455ce835bf",
+      "units": {
+        "base_unit": {
+          "base_unit": null,
+          "conversion_factor": 1,
+          "name": "гр",
+          "unique_code": "c99de99a-7a18-42b0-af37-2a0b63ebde80"
+        },
+        "conversion_factor": 1000,
+        "name": "кг",
+        "unique_code": "450628ef-5639-4b3f-9ce9-15b8825db110"
+      }
+    },
+    "start_amount": 2,
+    "start_date": 1729789200,
+    "storehouse": {
+      "location": "location 1",
+      "name": "Third storehouse",
+      "unique_code": "426f4f45-3bcb-43bd-9080-b6a70f4aa2c7"
+    },
+    "unique_code": "b71fe52d-9a74-4daf-826e-613d46bda5d5"
+  },
+  {
+    "end_amount": -86,
+    "end_date": 1730134800,
+    "nomenclature": {
+      "group": {
+        "name": "Еда",
+        "unique_code": "4480fd55-af15-4828-878b-d55e9cd2099c"
+      },
+      "name": "Ванильный сахар",
+      "unique_code": "652c5dba-a89e-446d-bf16-ea755436376d",
+      "units": {
+        "base_unit": {
+          "base_unit": null,
+          "conversion_factor": 1,
+          "name": "гр",
+          "unique_code": "c99de99a-7a18-42b0-af37-2a0b63ebde80"
+        },
+        "conversion_factor": 1000,
+        "name": "кг",
+        "unique_code": "450628ef-5639-4b3f-9ce9-15b8825db110"
+      }
+    },
+    "start_amount": -7,
+    "start_date": 1729789200,
+    "storehouse": {
+      "location": "location 1",
+      "name": "Main storehouse",
+      "unique_code": "1ecacb3b-7ddd-40d0-b4ea-c1d0052507b0"
+    },
+    "unique_code": "b05f006e-b5eb-4273-87b7-f154fb220e76"
+  },
+  {
+    "end_amount": 40,
+    "end_date": 1730134800,
+    "nomenclature": {
+      "group": {
+        "name": "Еда",
+        "unique_code": "4480fd55-af15-4828-878b-d55e9cd2099c"
+      },
+      "name": "Ванильный сахар",
+      "unique_code": "652c5dba-a89e-446d-bf16-ea755436376d",
+      "units": {
+        "base_unit": {
+          "base_unit": null,
+          "conversion_factor": 1,
+          "name": "гр",
+          "unique_code": "c99de99a-7a18-42b0-af37-2a0b63ebde80"
+        },
+        "conversion_factor": 1000,
+        "name": "кг",
+        "unique_code": "450628ef-5639-4b3f-9ce9-15b8825db110"
+      }
+    },
+    "start_amount": 3,
+    "start_date": 1729789200,
+    "storehouse": {
+      "location": "location 2",
+      "name": "Second storehouse",
+      "unique_code": "1d42661e-368b-4cee-9c97-ba0f9818d76d"
+    },
+    "unique_code": "5b7c9ba7-bcb1-4310-9440-6bb47cd58eb7"
+  },
+  {
+    "end_amount": 31,
+    "end_date": 1730134800,
+    "nomenclature": {
+      "group": {
+        "name": "Еда",
+        "unique_code": "4480fd55-af15-4828-878b-d55e9cd2099c"
+      },
+      "name": "Ванильный сахар",
+      "unique_code": "652c5dba-a89e-446d-bf16-ea755436376d",
+      "units": {
+        "base_unit": {
+          "base_unit": null,
+          "conversion_factor": 1,
+          "name": "гр",
+          "unique_code": "c99de99a-7a18-42b0-af37-2a0b63ebde80"
+        },
+        "conversion_factor": 1000,
+        "name": "кг",
+        "unique_code": "450628ef-5639-4b3f-9ce9-15b8825db110"
+      }
+    },
+    "start_amount": 1,
+    "start_date": 1729789200,
+    "storehouse": {
+      "location": "location 1",
+      "name": "Third storehouse",
+      "unique_code": "426f4f45-3bcb-43bd-9080-b6a70f4aa2c7"
+    },
+    "unique_code": "193059d8-e7f7-4029-a430-c293378b8436"
+  },
+  {
+    "end_amount": -56,
+    "end_date": 1730134800,
+    "nomenclature": {
+      "group": {
+        "name": "Еда",
+        "unique_code": "4480fd55-af15-4828-878b-d55e9cd2099c"
+      },
+      "name": "Куриное филе",
+      "unique_code": "34bbad42-4e11-4a74-a575-e30bc06ebac8",
+      "units": {
+        "base_unit": {
+          "base_unit": null,
+          "conversion_factor": 1,
+          "name": "гр",
+          "unique_code": "c99de99a-7a18-42b0-af37-2a0b63ebde80"
+        },
+        "conversion_factor": 1000,
+        "name": "кг",
+        "unique_code": "450628ef-5639-4b3f-9ce9-15b8825db110"
+      }
+    },
+    "start_amount": 6,
+    "start_date": 1729789200,
+    "storehouse": {
+      "location": "location 1",
+      "name": "Main storehouse",
+      "unique_code": "1ecacb3b-7ddd-40d0-b4ea-c1d0052507b0"
+    },
+    "unique_code": "7d56dadc-2bd0-4de5-94f9-14438c378e41"
+  },
+  {
+    "end_amount": -1,
+    "end_date": 1730134800,
+    "nomenclature": {
+      "group": {
+        "name": "Еда",
+        "unique_code": "4480fd55-af15-4828-878b-d55e9cd2099c"
+      },
+      "name": "Куриное филе",
+      "unique_code": "34bbad42-4e11-4a74-a575-e30bc06ebac8",
+      "units": {
+        "base_unit": {
+          "base_unit": null,
+          "conversion_factor": 1,
+          "name": "гр",
+          "unique_code": "c99de99a-7a18-42b0-af37-2a0b63ebde80"
+        },
+        "conversion_factor": 1000,
+        "name": "кг",
+        "unique_code": "450628ef-5639-4b3f-9ce9-15b8825db110"
+      }
+    },
+    "start_amount": -10,
+    "start_date": 1729789200,
+    "storehouse": {
+      "location": "location 2",
+      "name": "Second storehouse",
+      "unique_code": "1d42661e-368b-4cee-9c97-ba0f9818d76d"
+    },
+    "unique_code": "dbef0191-a131-4ab5-ae62-23c81ea5d01f"
+  },
+  {
+    "end_amount": -10,
+    "end_date": 1730134800,
+    "nomenclature": {
+      "group": {
+        "name": "Еда",
+        "unique_code": "4480fd55-af15-4828-878b-d55e9cd2099c"
+      },
+      "name": "Куриное филе",
+      "unique_code": "34bbad42-4e11-4a74-a575-e30bc06ebac8",
+      "units": {
+        "base_unit": {
+          "base_unit": null,
+          "conversion_factor": 1,
+          "name": "гр",
+          "unique_code": "c99de99a-7a18-42b0-af37-2a0b63ebde80"
+        },
+        "conversion_factor": 1000,
+        "name": "кг",
+        "unique_code": "450628ef-5639-4b3f-9ce9-15b8825db110"
+      }
+    },
+    "start_amount": -4,
+    "start_date": 1729789200,
+    "storehouse": {
+      "location": "location 1",
+      "name": "Third storehouse",
+      "unique_code": "426f4f45-3bcb-43bd-9080-b6a70f4aa2c7"
+    },
+    "unique_code": "8e7d72c4-f849-47fd-809e-f96edfda2e66"
+  },
+  {
+    "end_amount": -19,
+    "end_date": 1730134800,
+    "nomenclature": {
+      "group": {
+        "name": "Еда",
+        "unique_code": "4480fd55-af15-4828-878b-d55e9cd2099c"
+      },
+      "name": "Шампиньоны",
+      "unique_code": "76a247ac-b569-4c9c-b430-b65671aa1798",
+      "units": {
+        "base_unit": {
+          "base_unit": null,
+          "conversion_factor": 1,
+          "name": "гр",
+          "unique_code": "c99de99a-7a18-42b0-af37-2a0b63ebde80"
+        },
+        "conversion_factor": 1000,
+        "name": "кг",
+        "unique_code": "450628ef-5639-4b3f-9ce9-15b8825db110"
+      }
+    },
+    "start_amount": -6,
+    "start_date": 1729789200,
+    "storehouse": {
+      "location": "location 1",
+      "name": "Main storehouse",
+      "unique_code": "1ecacb3b-7ddd-40d0-b4ea-c1d0052507b0"
+    },
+    "unique_code": "5842874c-dae8-47f2-9174-76cbde87829e"
+  },
+  {
+    "end_amount": -7,
+    "end_date": 1730134800,
+    "nomenclature": {
+      "group": {
+        "name": "Еда",
+        "unique_code": "4480fd55-af15-4828-878b-d55e9cd2099c"
+      },
+      "name": "Шампиньоны",
+      "unique_code": "76a247ac-b569-4c9c-b430-b65671aa1798",
+      "units": {
+        "base_unit": {
+          "base_unit": null,
+          "conversion_factor": 1,
+          "name": "гр",
+          "unique_code": "c99de99a-7a18-42b0-af37-2a0b63ebde80"
+        },
+        "conversion_factor": 1000,
+        "name": "кг",
+        "unique_code": "450628ef-5639-4b3f-9ce9-15b8825db110"
+      }
+    },
+    "start_amount": 2,
+    "start_date": 1729789200,
+    "storehouse": {
+      "location": "location 2",
+      "name": "Second storehouse",
+      "unique_code": "1d42661e-368b-4cee-9c97-ba0f9818d76d"
+    },
+    "unique_code": "a59ebad1-e573-48e2-86d2-2e9626f9271b"
+  },
+  {
+    "end_amount": -7,
+    "end_date": 1730134800,
+    "nomenclature": {
+      "group": {
+        "name": "Еда",
+        "unique_code": "4480fd55-af15-4828-878b-d55e9cd2099c"
+      },
+      "name": "Шампиньоны",
+      "unique_code": "76a247ac-b569-4c9c-b430-b65671aa1798",
+      "units": {
+        "base_unit": {
+          "base_unit": null,
+          "conversion_factor": 1,
+          "name": "гр",
+          "unique_code": "c99de99a-7a18-42b0-af37-2a0b63ebde80"
+        },
+        "conversion_factor": 1000,
+        "name": "кг",
+        "unique_code": "450628ef-5639-4b3f-9ce9-15b8825db110"
+      }
+    },
+    "start_amount": -10,
+    "start_date": 1729789200,
+    "storehouse": {
+      "location": "location 1",
+      "name": "Third storehouse",
+      "unique_code": "426f4f45-3bcb-43bd-9080-b6a70f4aa2c7"
+    },
+    "unique_code": "38c89acc-9953-4ab2-9ac2-d5c21215d5a2"
+  },
+  {
+    "end_amount": 5,
+    "end_date": 1730134800,
+    "nomenclature": {
+      "group": {
+        "name": "Еда",
+        "unique_code": "4480fd55-af15-4828-878b-d55e9cd2099c"
+      },
+      "name": "Лук репчатый",
+      "unique_code": "f165ef81-89aa-4764-ae1c-b59ee7b644d8",
+      "units": {
+        "base_unit": {
+          "base_unit": null,
+          "conversion_factor": 1,
+          "name": "гр",
+          "unique_code": "c99de99a-7a18-42b0-af37-2a0b63ebde80"
+        },
+        "conversion_factor": 1000,
+        "name": "кг",
+        "unique_code": "450628ef-5639-4b3f-9ce9-15b8825db110"
+      }
+    },
+    "start_amount": -3,
+    "start_date": 1729789200,
+    "storehouse": {
+      "location": "location 1",
+      "name": "Main storehouse",
+      "unique_code": "1ecacb3b-7ddd-40d0-b4ea-c1d0052507b0"
+    },
+    "unique_code": "4243209d-2228-4413-bd48-d7df66c680ab"
+  },
+  {
+    "end_amount": -33,
+    "end_date": 1730134800,
+    "nomenclature": {
+      "group": {
+        "name": "Еда",
+        "unique_code": "4480fd55-af15-4828-878b-d55e9cd2099c"
+      },
+      "name": "Лук репчатый",
+      "unique_code": "f165ef81-89aa-4764-ae1c-b59ee7b644d8",
+      "units": {
+        "base_unit": {
+          "base_unit": null,
+          "conversion_factor": 1,
+          "name": "гр",
+          "unique_code": "c99de99a-7a18-42b0-af37-2a0b63ebde80"
+        },
+        "conversion_factor": 1000,
+        "name": "кг",
+        "unique_code": "450628ef-5639-4b3f-9ce9-15b8825db110"
+      }
+    },
+    "start_amount": -1,
+    "start_date": 1729789200,
+    "storehouse": {
+      "location": "location 2",
+      "name": "Second storehouse",
+      "unique_code": "1d42661e-368b-4cee-9c97-ba0f9818d76d"
+    },
+    "unique_code": "cf734503-c9db-4c88-ae54-ce572f99e3c8"
+  },
+  {
+    "end_amount": -62,
+    "end_date": 1730134800,
+    "nomenclature": {
+      "group": {
+        "name": "Еда",
+        "unique_code": "4480fd55-af15-4828-878b-d55e9cd2099c"
+      },
+      "name": "Лук репчатый",
+      "unique_code": "f165ef81-89aa-4764-ae1c-b59ee7b644d8",
+      "units": {
+        "base_unit": {
+          "base_unit": null,
+          "conversion_factor": 1,
+          "name": "гр",
+          "unique_code": "c99de99a-7a18-42b0-af37-2a0b63ebde80"
+        },
+        "conversion_factor": 1000,
+        "name": "кг",
+        "unique_code": "450628ef-5639-4b3f-9ce9-15b8825db110"
+      }
+    },
+    "start_amount": -9,
+    "start_date": 1729789200,
+    "storehouse": {
+      "location": "location 1",
+      "name": "Third storehouse",
+      "unique_code": "426f4f45-3bcb-43bd-9080-b6a70f4aa2c7"
+    },
+    "unique_code": "01d65335-cd65-4862-91fe-792e42bfcb47"
+  },
+  {
+    "end_amount": 8,
+    "end_date": 1730134800,
+    "nomenclature": {
+      "group": {
+        "name": "Еда",
+        "unique_code": "4480fd55-af15-4828-878b-d55e9cd2099c"
+      },
+      "name": "Сливки",
+      "unique_code": "a6ca07e3-56b0-4ff8-87c9-e5d4510169aa",
+      "units": {
+        "base_unit": {
+          "base_unit": null,
+          "conversion_factor": 1,
+          "name": "мл",
+          "unique_code": "7cca0459-44b6-4c8d-98fc-b9510995284e"
+        },
+        "conversion_factor": 1000,
+        "name": "л",
+        "unique_code": "9ed0874a-bb0c-4b23-8db6-23c019d57f4c"
+      }
+    },
+    "start_amount": -1,
+    "start_date": 1729789200,
+    "storehouse": {
+      "location": "location 1",
+      "name": "Main storehouse",
+      "unique_code": "1ecacb3b-7ddd-40d0-b4ea-c1d0052507b0"
+    },
+    "unique_code": "ada195f0-af57-49ed-9ed2-0e5a16973e5c"
+  },
+  {
+    "end_amount": -2,
+    "end_date": 1730134800,
+    "nomenclature": {
+      "group": {
+        "name": "Еда",
+        "unique_code": "4480fd55-af15-4828-878b-d55e9cd2099c"
+      },
+      "name": "Сливки",
+      "unique_code": "a6ca07e3-56b0-4ff8-87c9-e5d4510169aa",
+      "units": {
+        "base_unit": {
+          "base_unit": null,
+          "conversion_factor": 1,
+          "name": "мл",
+          "unique_code": "7cca0459-44b6-4c8d-98fc-b9510995284e"
+        },
+        "conversion_factor": 1000,
+        "name": "л",
+        "unique_code": "9ed0874a-bb0c-4b23-8db6-23c019d57f4c"
+      }
+    },
+    "start_amount": -3,
+    "start_date": 1729789200,
+    "storehouse": {
+      "location": "location 2",
+      "name": "Second storehouse",
+      "unique_code": "1d42661e-368b-4cee-9c97-ba0f9818d76d"
+    },
+    "unique_code": "5a5a6fe8-33c9-4bdd-8707-2be4824f57dd"
+  },
+  {
+    "end_amount": -53,
+    "end_date": 1730134800,
+    "nomenclature": {
+      "group": {
+        "name": "Еда",
+        "unique_code": "4480fd55-af15-4828-878b-d55e9cd2099c"
+      },
+      "name": "Сливки",
+      "unique_code": "a6ca07e3-56b0-4ff8-87c9-e5d4510169aa",
+      "units": {
+        "base_unit": {
+          "base_unit": null,
+          "conversion_factor": 1,
+          "name": "мл",
+          "unique_code": "7cca0459-44b6-4c8d-98fc-b9510995284e"
+        },
+        "conversion_factor": 1000,
+        "name": "л",
+        "unique_code": "9ed0874a-bb0c-4b23-8db6-23c019d57f4c"
+      }
+    },
+    "start_amount": 1,
+    "start_date": 1729789200,
+    "storehouse": {
+      "location": "location 1",
+      "name": "Third storehouse",
+      "unique_code": "426f4f45-3bcb-43bd-9080-b6a70f4aa2c7"
+    },
+    "unique_code": "4b9ac180-13f3-46fc-9622-e4c60b57e7b9"
+  },
+  {
+    "end_amount": -10,
+    "end_date": 1730134800,
+    "nomenclature": {
+      "group": {
+        "name": "Еда",
+        "unique_code": "4480fd55-af15-4828-878b-d55e9cd2099c"
+      },
+      "name": "Болгарский перец",
+      "unique_code": "2d7eb51a-d8ba-4ae1-81e8-be71d20b864e",
+      "units": {
+        "base_unit": null,
+        "conversion_factor": 1,
+        "name": "шт",
+        "unique_code": "db62f1d7-5ecd-491d-9364-80dfac140fdd"
+      }
+    },
+    "start_amount": -8,
+    "start_date": 1729789200,
+    "storehouse": {
+      "location": "location 1",
+      "name": "Main storehouse",
+      "unique_code": "1ecacb3b-7ddd-40d0-b4ea-c1d0052507b0"
+    },
+    "unique_code": "a388f612-f610-4d6c-88d8-6806d41b7ac7"
+  },
+  {
+    "end_amount": -14,
+    "end_date": 1730134800,
+    "nomenclature": {
+      "group": {
+        "name": "Еда",
+        "unique_code": "4480fd55-af15-4828-878b-d55e9cd2099c"
+      },
+      "name": "Болгарский перец",
+      "unique_code": "2d7eb51a-d8ba-4ae1-81e8-be71d20b864e",
+      "units": {
+        "base_unit": null,
+        "conversion_factor": 1,
+        "name": "шт",
+        "unique_code": "db62f1d7-5ecd-491d-9364-80dfac140fdd"
+      }
+    },
+    "start_amount": 2,
+    "start_date": 1729789200,
+    "storehouse": {
+      "location": "location 2",
+      "name": "Second storehouse",
+      "unique_code": "1d42661e-368b-4cee-9c97-ba0f9818d76d"
+    },
+    "unique_code": "387769ef-935f-4d65-aca2-af4c8ac65f87"
+  },
+  {
+    "end_amount": -35,
+    "end_date": 1730134800,
+    "nomenclature": {
+      "group": {
+        "name": "Еда",
+        "unique_code": "4480fd55-af15-4828-878b-d55e9cd2099c"
+      },
+      "name": "Болгарский перец",
+      "unique_code": "2d7eb51a-d8ba-4ae1-81e8-be71d20b864e",
+      "units": {
+        "base_unit": null,
+        "conversion_factor": 1,
+        "name": "шт",
+        "unique_code": "db62f1d7-5ecd-491d-9364-80dfac140fdd"
+      }
+    },
+    "start_amount": 4,
+    "start_date": 1729789200,
+    "storehouse": {
+      "location": "location 1",
+      "name": "Third storehouse",
+      "unique_code": "426f4f45-3bcb-43bd-9080-b6a70f4aa2c7"
+    },
+    "unique_code": "43dc06c5-fc53-4f90-944e-ca50286ccb59"
+  },
+  {
+    "end_amount": -33,
+    "end_date": 1730134800,
+    "nomenclature": {
+      "group": {
+        "name": "Еда",
+        "unique_code": "4480fd55-af15-4828-878b-d55e9cd2099c"
+      },
+      "name": "Вода",
+      "unique_code": "2dcdbb27-e926-4ac5-8c68-0cd7675c1c42",
+      "units": {
+        "base_unit": {
+          "base_unit": null,
+          "conversion_factor": 1,
+          "name": "мл",
+          "unique_code": "7cca0459-44b6-4c8d-98fc-b9510995284e"
+        },
+        "conversion_factor": 1000,
+        "name": "л",
+        "unique_code": "9ed0874a-bb0c-4b23-8db6-23c019d57f4c"
+      }
+    },
+    "start_amount": -4,
+    "start_date": 1729789200,
+    "storehouse": {
+      "location": "location 1",
+      "name": "Main storehouse",
+      "unique_code": "1ecacb3b-7ddd-40d0-b4ea-c1d0052507b0"
+    },
+    "unique_code": "e665c210-82b6-4987-8a5c-a14c2c687e84"
+  },
+  {
+    "end_amount": 15,
+    "end_date": 1730134800,
+    "nomenclature": {
+      "group": {
+        "name": "Еда",
+        "unique_code": "4480fd55-af15-4828-878b-d55e9cd2099c"
+      },
+      "name": "Вода",
+      "unique_code": "2dcdbb27-e926-4ac5-8c68-0cd7675c1c42",
+      "units": {
+        "base_unit": {
+          "base_unit": null,
+          "conversion_factor": 1,
+          "name": "мл",
+          "unique_code": "7cca0459-44b6-4c8d-98fc-b9510995284e"
+        },
+        "conversion_factor": 1000,
+        "name": "л",
+        "unique_code": "9ed0874a-bb0c-4b23-8db6-23c019d57f4c"
+      }
+    },
+    "start_amount": 6,
+    "start_date": 1729789200,
+    "storehouse": {
+      "location": "location 2",
+      "name": "Second storehouse",
+      "unique_code": "1d42661e-368b-4cee-9c97-ba0f9818d76d"
+    },
+    "unique_code": "5d21083f-070a-424c-9931-47c013576516"
+  },
+  {
+    "end_amount": 34,
+    "end_date": 1730134800,
+    "nomenclature": {
+      "group": {
+        "name": "Еда",
+        "unique_code": "4480fd55-af15-4828-878b-d55e9cd2099c"
+      },
+      "name": "Вода",
+      "unique_code": "2dcdbb27-e926-4ac5-8c68-0cd7675c1c42",
+      "units": {
+        "base_unit": {
+          "base_unit": null,
+          "conversion_factor": 1,
+          "name": "мл",
+          "unique_code": "7cca0459-44b6-4c8d-98fc-b9510995284e"
+        },
+        "conversion_factor": 1000,
+        "name": "л",
+        "unique_code": "9ed0874a-bb0c-4b23-8db6-23c019d57f4c"
+      }
+    },
+    "start_amount": -8,
+    "start_date": 1729789200,
+    "storehouse": {
+      "location": "location 1",
+      "name": "Third storehouse",
+      "unique_code": "426f4f45-3bcb-43bd-9080-b6a70f4aa2c7"
+    },
+    "unique_code": "3c700b36-f3eb-4dde-a3f8-f28e0bd4b3f1"
+  }
+]

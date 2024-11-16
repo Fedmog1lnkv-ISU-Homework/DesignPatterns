@@ -15,3 +15,17 @@ class StoreTurnoverRepository:
 
     def get_all(self) -> list[StoreTurnover]:
         return self.__store_turnover_data_source.get_all()
+
+    def create_multiple(self, data: list[StoreTurnover]):
+        result = []
+
+        for turnover in data:
+            result.append(self.__store_turnover_data_source.create(turnover))
+
+        return result
+
+    def create(self, data: StoreTurnover):
+        self.__store_turnover_data_source.create(data)
+
+    def update(self, data: StoreTurnover):
+        self.__store_turnover_data_source.create(data)

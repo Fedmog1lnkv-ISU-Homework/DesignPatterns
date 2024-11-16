@@ -2,7 +2,9 @@ from copy import deepcopy
 from datetime import datetime
 
 from src.core.abstractions.abstract_manager import AbstractManager
+from src.core.enums.event_type import EventType
 from src.core.enums.filter_operation_type import FilterOperationType
+from src.core.models.nomenclature_model import Nomenclature
 from src.core.models.store_turnover import StoreTurnover
 from src.core.services.dto.store_turnover_dto import StoreTurnoverDTO
 from src.core.services.prototype import PrototypeService
@@ -66,6 +68,9 @@ class StoreManager(AbstractManager):
 
         return result
 
+    def merge_turnovers(self, new_turnovers: list[StoreTurnover], old_turnovers: list[StoreTurnover]) -> list[StoreTurnover]:
+        return self.__store_turnover_factory.merge_turnovers(new_turnovers, old_turnovers)
+
     def get_turnovers(self, dto: StoreTurnoverDTO) -> list[StoreTurnover]:
 
         settings = self.__settings_manager.settings
@@ -102,8 +107,32 @@ class StoreManager(AbstractManager):
         
         return self.__store_turnover_factory.create(filtered_transactions)
 
+    def change_transactions_nomenclature(self, nomenclature: Nomenclature):
+
+        transactions = self.__store_transaction_repository.get_all()
+
+        for transaction in transactions:
+            if transaction.nomenclature.unique_code == nomenclature.unique_code:
+                transaction.nomenclature = nomenclature
+                self.__store_transaction_repository.update(transaction)
+
+    def change_turnovers_nomenclature(self, nomenclature: Nomenclature):
+
+        turnovers = self.__store_turnover_repository.get_all()
+
+        for turnover in turnovers:
+            if turnover.nomenclature.unique_code == nomenclature.unique_code:
+                turnover.nomenclature = nomenclature
+                self.__store_turnover_repository.update(turnover)
+
     def handle_event(self, event: Event):
         super().handle_event(event)
+
+        if event.type == EventType.CHANGE_NOMENCLATURE:
+            nomenclature = event.data
+
+            self.change_transactions_nomenclature(nomenclature)
+            self.change_turnovers_nomenclature(nomenclature)
         
         
         
