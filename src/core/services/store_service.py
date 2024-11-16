@@ -14,6 +14,7 @@ from src.infrastructure.repositories.recipes_repository import RecipesRepository
 from src.infrastructure.repositories.store_transaction_repository import StoreTransactionRepository
 from src.infrastructure.repositories.store_turnover_repository import StoreTurnoverRepository
 from src.infrastructure.repositories.storehouse_repository import StoreHouseRepository
+from src.utils.observer.event import Event
 
 
 class StoreManager(AbstractManager):
@@ -100,7 +101,9 @@ class StoreManager(AbstractManager):
         filtered_transactions = self.__prototype_service.get_by_filters(transactions, filters)
         
         return self.__store_turnover_factory.create(filtered_transactions)
-        
+
+    def handle_event(self, event: Event):
+        super().handle_event(event)
         
         
         

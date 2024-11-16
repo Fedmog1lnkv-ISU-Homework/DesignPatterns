@@ -7,6 +7,103 @@ servers:
   - url: /api
     description: Base URL for the API
 paths:
+  /api/nomenclature:
+    put:
+      summary: Добавить номенальную единицу
+      operationId: src.api.routes.nomenclature.create_nomenclature
+      requestBody:
+        description: DTO модель для создания номенальной единицы
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateNomenclatureDTO'
+      responses:
+        200:
+          description: Номенальная единица успешно добавлена
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  message:
+                    type: string
+  /api/nomenclature/{id}:
+    patch:
+      summary: Обновить номенальную единицу
+      operationId: src.api.routes.nomenclature.update_nomenclature
+      parameters:
+        - name: id
+          in: path
+          description: ID номенальной единицы
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: DTO модель для создания номенальной единицы
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateNomenclatureDTO'
+      responses:
+        200:
+          description: Номенальная единица успешно добавлена
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  message:
+                    type: string
+    delete:
+      summary: Удалить номенальную единицу
+      operationId: src.api.routes.nomenclature.delete_nomenclature
+      parameters:
+        - name: id
+          in: path
+          description: ID номенальной единицы
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Фильтр успешно добавлен
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  message:
+                    type: string
+    get:
+      summary: Получить номенальную единицу
+      operationId: src.api.routes.nomenclature.get_nomenclature
+      parameters:
+        - name: id
+          in: path
+          description: ID номенальной единицы
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Фильтр успешно добавлен
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  message:
+                    type: string
   /api/settings:
     get:
       summary: Получить настройки
@@ -168,6 +265,24 @@ paths:
                 type: string
 components:
   schemas:
+    UpdateNomenclatureDTO:
+      type: object
+      properties:
+        name:
+          type: string
+        nomenclature_group_id:
+          type: string
+        unit_id:
+          type: string
+    CreateNomenclatureDTO:
+      type: object
+      properties:
+        name:
+          type: string
+        nomenclature_group_id:
+          type: string
+        unit_id:
+          type: string
     DateBlockDTO:
       type: object
       properties:

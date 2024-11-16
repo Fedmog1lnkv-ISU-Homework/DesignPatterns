@@ -15,3 +15,23 @@ class NomenclatureRepository:
 
     def get_all(self) -> list[Nomenclature]:
         return self.__nomenclatures_data_source.get_all()
+    
+    def get_by_id(self, id: str) -> Nomenclature | None:
+        return self.__nomenclatures_data_source.get(id)
+    
+    def create(self, nomenclature: Nomenclature) -> Nomenclature:
+        return self.__nomenclatures_data_source.create(nomenclature)
+    
+    def create_multiple(self, nomenclatures: list[Nomenclature]) -> list[Nomenclature]:
+        result = []
+        
+        for nomenclature in nomenclatures:
+            result.append(self.__nomenclatures_data_source.create(nomenclature))
+        
+        return result
+    
+    def update(self, nomenclature: Nomenclature) -> Nomenclature:
+        return self.__nomenclatures_data_source.create(nomenclature)
+    
+    def delete(self, id: str) -> None:
+        self.__nomenclatures_data_source.delete(id)

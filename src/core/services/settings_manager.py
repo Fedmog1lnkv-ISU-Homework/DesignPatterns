@@ -2,6 +2,7 @@ from src.core.abstractions.abstract_manager import AbstractManager
 from src.core.models.settings import Settings
 from src.core.services.dto.update_date_block_dto import UpdateDateBlockDTO
 from src.infrastructure.repositories.settings_repository import SettingsRepository
+from src.utils.observer.event import Event
 
 
 class SettingsManager(AbstractManager):
@@ -56,3 +57,6 @@ class SettingsManager(AbstractManager):
     def settings(self, value: Settings) -> None:
         self._settings = value
         self._repository.save_settings(value)
+
+    def handle_event(self, event: Event):
+        super().handle_event(event)

@@ -1,6 +1,7 @@
 from src.api.routes.entity_factory.abstractions.report_entity_factory import ReportEntityFactory
 from src.core.models.nomenclature_group_model import NomenclatureGroup
 from src.infrastructure.generators.start_nomenclature_generator import StartNomenclatureGenerator
+from src.infrastructure.repositories.nomenclature_group_repository import NomenclatureGroupRepository
 
 
 class NomenclatureGroupEntityFactory(ReportEntityFactory[list[NomenclatureGroup]]):
@@ -8,4 +9,4 @@ class NomenclatureGroupEntityFactory(ReportEntityFactory[list[NomenclatureGroup]
         return 'nomenclature-groups'
 
     def get_entity(self):
-        return StartNomenclatureGenerator().get_groups()
+        return NomenclatureGroupRepository().get_all()
