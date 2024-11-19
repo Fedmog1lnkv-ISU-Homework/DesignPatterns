@@ -1,4 +1,5 @@
 from src.core.abstractions.abstract_manager import AbstractManager
+from src.core.enums.event_type import EventType
 from src.core.models.settings import Settings
 from src.core.services.dto.update_date_block_dto import UpdateDateBlockDTO
 from src.infrastructure.repositories.settings_repository import SettingsRepository
@@ -58,5 +59,19 @@ class SettingsManager(AbstractManager):
         self._settings = value
         self._repository.save_settings(value)
 
+    def update_first_start(self, filename: str = None) -> None:
+        settings = self.settings
+
+        if filename is not None:
+            settings.dump_path = filename
+
+        settings.firs_start = False
+        self.settings = settings
+
+        self.save_settings()
+
     def handle_event(self, event: Event):
         super().handle_event(event)
+
+        if event.type == EventType.DUMP_DATA:
+            self.update_first_start(event.data)

@@ -5,6 +5,7 @@ from typing import get_origin, get_args, get_type_hints
 from src.core.abstractions.abstract_entity import AbstractEntity
 from src.core.exceptions.validation_exception import TypeValidationException
 from src.infrastructure.serializers.datetime_mapper import DatetimeMapper
+from src.infrastructure.serializers.enum_mapper import EnumMapper
 from src.infrastructure.serializers.timedelta_mapper import TimedeltaMapper
 
 
@@ -13,6 +14,7 @@ class AbstractSerializer(ABC):
     __mappers = [
         TimedeltaMapper(),
         DatetimeMapper(),
+        EnumMapper(),
     ]
 
     @abstractmethod

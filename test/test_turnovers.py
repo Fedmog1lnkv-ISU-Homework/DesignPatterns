@@ -60,7 +60,7 @@ def test_store_turnover_calculated():
 
     update_date_block_dto = UpdateDateBlockDTO()
 
-    update_date_block_dto.value = datetime.fromtimestamp(1729872000)
+    update_date_block_dto.value = datetime.fromtimestamp(1730134800)
 
     settings_manager.update_date_block(update_date_block_dto)
 
@@ -87,7 +87,7 @@ def test_store_turnover_calculated():
     print()
     print(f"Date block: {settings_manager.settings.date_block}, dto.end_date: {dto.end_time}, working time: {end_time - start_time}")
 
-    update_date_block_dto.value = datetime.fromtimestamp(1730131199)
+    update_date_block_dto.value = datetime.fromtimestamp(1730403999)
 
     store_manager.update_turnovers_by_date_block(update_date_block_dto.value)
     settings_manager.update_date_block(update_date_block_dto)

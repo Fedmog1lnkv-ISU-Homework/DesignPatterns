@@ -7,6 +7,41 @@ servers:
   - url: /api
     description: Base URL for the API
 paths:
+  /api/osv:
+    get:
+      summary: Получить OSV отчёт
+      operationId: src.api.routes.osv.get
+      parameters:
+        - name: start_date
+          in: query
+          description: начало периода
+          required: true
+          schema:
+            type: string
+        - name: end_date
+          in: query
+          description: конец периода
+          required: true
+          schema:
+            type: string
+        - name: storehouse_id
+          in: query
+          description: id склада
+          required: false
+          schema:
+            type: string
+      responses:
+        200:
+          description: Номенальная единица успешно добавлена
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  message:
+                    type: string
   /api/nomenclature:
     put:
       summary: Добавить номенальную единицу
@@ -104,6 +139,20 @@ paths:
                     type: boolean
                   message:
                     type: string
+  /api/settings/dump:
+    post:
+      summary: Сохранить данные
+      operationId: src.api.routes.settings.dump
+      responses:
+        200:
+          description: Данные сохранены
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  settings:
+                    type: object
   /api/settings:
     get:
       summary: Получить настройки

@@ -15,3 +15,17 @@ class StoreTransactionRepository:
 
     def get_all(self) -> list[StoreTransaction]:
         return self.__store_transaction_data_source.get_all()
+
+    def create_multiple(self, data: list[StoreTransaction]):
+        result = []
+
+        for transaction in data:
+            result.append(self.__store_transaction_data_source.create(transaction))
+
+        return result
+
+    def create(self, data: StoreTransaction):
+        self.__store_transaction_data_source.create(data)
+
+    def update(self, data: StoreTransaction):
+        self.__store_transaction_data_source.create(data)

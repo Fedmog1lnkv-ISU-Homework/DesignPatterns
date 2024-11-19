@@ -5,5 +5,7 @@
     "bic": "044525225",
     "name": "ООО Рога и Копыта",
     "type_of_ownership": "ООООО",
-    "date_block": 1730131199
+    "date_block": 1730131199,
+    "firs_start": false,
+    "dump_path": "dumps/dump.json"
 }

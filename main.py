@@ -16,13 +16,6 @@ test_dict = {
 }
 
 if __name__ == "__main__":
-    
-    StartManager()
-
-    store_manager = StoreManager()
-
-    store_manager.init_store_turnovers_by_date_block()
-
     Swagger(app.app, template_file="swagger.yaml")
 
     app.run(port=8080)

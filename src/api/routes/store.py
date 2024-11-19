@@ -1,9 +1,10 @@
 from src.core.services.dto.store_turnover_dto import StoreTurnoverDTO
 from src.core.services.store_service import StoreManager
+from src.di.manager import store_service
 from src.infrastructure.serializers.json_serializer import JsonSerializer
 from flask import Blueprint, request
 
-store_service = StoreManager()
+
 json_serializer = JsonSerializer()
 
 store_blueprint = Blueprint('/api/store', __name__, url_prefix='/api/store')

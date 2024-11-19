@@ -22,6 +22,8 @@ class Settings(AbstractEntity):
     __type_of_ownership: str = ""
     __default_report_format: ReportFormat = ReportFormat.CSV
     __date_block: datetime = None
+    __first_start: bool = False
+    __dump_path: str = None
     __report_map: dict[ReportFormat, type] = {
         ReportFormat.CSV: CsvReport,
         ReportFormat.MARKDOWN: MarkdownReport,
@@ -137,7 +139,9 @@ class Settings(AbstractEntity):
             "bic": self.bic,
             "name": self.name,
             "type_of_ownership": self.type_of_ownership,
-            "date_block": int(self.date_block.timestamp())
+            "date_block": int(self.date_block.timestamp()),
+            "firs_start": self.firs_start,
+            "dump_path": self.dump_path
         }
 
     @property
@@ -153,6 +157,26 @@ class Settings(AbstractEntity):
             value = datetime.fromtimestamp(value)
 
         self.__date_block = value
+
+    @property
+    def firs_start(self) -> bool:
+        return self.__firs_start
+
+    @firs_start.setter
+    def firs_start(self, value: bool):
+        if not isinstance(value, bool):
+            raise TypeValidationException(value, bool)
+        self.__firs_start = value
+
+    @property
+    def dump_path(self) -> str:
+        return self.__dump_path
+
+    @dump_path.setter
+    def dump_path(self, value: str):
+        if not isinstance(value, str):
+            raise TypeValidationException(value, str)
+        self.__dump_path = value
 
     def set_compare_mode(self, other) -> bool:
         return super().set_compare_mode(other)

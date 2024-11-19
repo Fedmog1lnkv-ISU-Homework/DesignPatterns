@@ -13,6 +13,14 @@ class RecipesRepository:
         for recipe in start_recipes:
             self.__recipes_data_source.create(recipe)
 
+    def create_multiple(self, recipes: list[Recipe]):
+        result = []
+
+        for recipe in recipes:
+            result.append(self.__recipes_data_source.create(recipe))
+
+        return result
+
     def get_all(self) -> list[Recipe]:
         return self.__recipes_data_source.get_all()
     
