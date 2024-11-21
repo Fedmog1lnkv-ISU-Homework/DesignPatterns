@@ -8,6 +8,7 @@ from src.infrastructure.reports.json_report import JsonReport
 from src.infrastructure.reports.markdown_report import MarkdownReport
 from src.infrastructure.reports.rtf_report import RtfReport
 from src.infrastructure.reports.xml_report import XmlReport
+from src.utils.logger.item import LogLevel
 
 
 class Settings(AbstractEntity):
@@ -21,9 +22,11 @@ class Settings(AbstractEntity):
     __name: str = ""
     __type_of_ownership: str = ""
     __default_report_format: ReportFormat = ReportFormat.CSV
-    __date_block: datetime = None
+    __date_block: datetime = datetime.now()
     __first_start: bool = False
     __dump_path: str = None
+    __log_level: LogLevel = LogLevel.DEBUG
+    __log_file_path: str = None
     __report_map: dict[ReportFormat, type] = {
         ReportFormat.CSV: CsvReport,
         ReportFormat.MARKDOWN: MarkdownReport,
@@ -128,6 +131,28 @@ class Settings(AbstractEntity):
     def report_map(self) -> dict[ReportFormat, type]:
         return self.__report_map
 
+    @property
+    def log_level(self) -> LogLevel:
+        return self.__log_level
+
+    @log_level.setter
+    def log_level(self, value: LogLevel | int):
+        if isinstance(value, int):
+            value = LogLevel(value)
+        if not isinstance(value, LogLevel):
+            raise TypeValidationException(value, LogLevel)
+        self.__log_level = value
+
+    @property
+    def log_file_path(self) -> str:
+        return self.__log_file_path
+
+    @log_file_path.setter
+    def log_file_path(self, value: str):
+        if not isinstance(value, str):
+            raise TypeValidationException(value, str)
+        self.__log_file_path = value
+
     def to_json(self) -> dict:
         """
         Преобразовать настройки в JSON.
@@ -141,7 +166,9 @@ class Settings(AbstractEntity):
             "type_of_ownership": self.type_of_ownership,
             "date_block": int(self.date_block.timestamp()),
             "firs_start": self.firs_start,
-            "dump_path": self.dump_path
+            "dump_path": self.dump_path,
+            "log_level": self.log_level.value,
+            "log_file_path": self.log_file_path
         }
 
     @property
@@ -160,13 +187,13 @@ class Settings(AbstractEntity):
 
     @property
     def firs_start(self) -> bool:
-        return self.__firs_start
+        return self.__first_start
 
     @firs_start.setter
     def firs_start(self, value: bool):
         if not isinstance(value, bool):
             raise TypeValidationException(value, bool)
-        self.__firs_start = value
+        self.__first_start = value
 
     @property
     def dump_path(self) -> str:

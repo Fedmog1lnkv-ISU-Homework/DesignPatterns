@@ -1,0 +1,19 @@
+{
+  "group": {
+    "name": "Еда",
+    "unique_code": "4480fd55-af15-4828-878b-d55e9cd2099c"
+  },
+  "name": "new_name",
+  "unique_code": "e891b718-9051-4b02-81bd-ec8f01cc44f0",
+  "units": {
+    "base_unit": {
+      "base_unit": null,
+      "conversion_factor": 1,
+      "name": "гр",
+      "unique_code": "c99de99a-7a18-42b0-af37-2a0b63ebde80"
+    },
+    "conversion_factor": 1000,
+    "name": "кг",
+    "unique_code": "450628ef-5639-4b3f-9ce9-15b8825db110"
+  }
+}
