@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+    app_1:
+      container_name: app.1
+      image: app
+      ports:
+        - "8000:8080"
+      volumes:
+        - ./settings.json:/app/settings.json
+        - ./dumps:/app/dumps
+        - ./logs:/app/logs
+    app_2:
+      container_name: app.2
+      image: app
+      ports:
+        - "8001:8080"
+      volumes:
+        - ./settings.json:/app/settings.json
+        - ./dumps:/app/dumps
+        - ./logs:/app/logs
